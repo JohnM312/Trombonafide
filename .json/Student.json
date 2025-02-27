@@ -1,0 +1,18 @@
+[
+  {
+    "studentID": "F0398502",
+    "firstName": "Daniel",
+    "lastName": "Crawford",
+    "username": "DCUniverse",
+    "password": "DC9284Raw",
+    "email": "DCrawford@email.sc.edu"
+  },
+  {
+    "studentID": "G0293014",
+    "firstName": "Rocky",
+    "lastName": "Jameson",
+    "username": "RRocks!",
+    "password": "RJ9395!",
+    "email": "RJameson@email.sc.edu"
+  }
+]

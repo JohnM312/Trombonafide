@@ -1,0 +1,26 @@
+[
+  {
+    "songName": "76 Trombones",
+    "composer": {
+      "firstName": "Meredith",
+      "lastName": "Willson",
+      "genre": "Musical Theatre"
+    },
+    "genre": "March",
+    "difficultyRate": 5,
+    "melodyStructure": 0.92,
+    "note": "Bb3, D4, F4, Bb4, Bb4, Ab4, G4, F4"
+  },
+  {
+    "songName": "Stardust",
+    "composer": {
+      "firstName": "Hoagy",
+      "lastName": "Carmichael",
+      "genre": "Jazz"
+    },
+    "genre": "Jazz Standard",
+    "difficultyRate": 4,
+    "melodyStructure": 0.88,
+    "note": "Eb4, F4, G4, Bb4, Db5, C5, Bb4, Ab4"
+  }
+]

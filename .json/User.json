@@ -1,0 +1,30 @@
+[
+  {
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "username": "asmith",
+    "email": "alice.smith@example.com",
+    "password": "securePassword123",
+    "bankData": [
+      {
+        "accountNumber": "1234567890",
+        "bankName": "First National Bank",
+        "balance": 500.75
+      }
+    ]
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Johnson",
+    "username": "bjohnson",
+    "email": "bob.johnson@example.com",
+    "password": "anotherStrongPassword",
+    "bankData": [
+      {
+        "accountNumber": "9876543210",
+        "bankName": "Second United Bank",
+        "balance": 1250.00
+      }
+    ]
+  }
+]

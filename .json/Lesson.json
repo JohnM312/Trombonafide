@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Introduction to Trombone",
+    "content": "This lesson will cover basic Trombone techniques, including fingerings and basic exercises.",
+    "feedback": true,
+    "hint": "Remember to keep your ommature firm to play a note."
+  },
+  {
+    "title": "Music Theory",
+    "content": "This lesson explores the basics on how to read sheet music and its elements.",
+    "feedback": true,
+    "hint": "Remember the structures of how to play notes on a sheet music."
+  }
+]

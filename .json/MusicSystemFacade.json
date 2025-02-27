@@ -1,0 +1,88 @@
+[
+  {
+    "songList": [
+      {
+        "songName": "Twinkle Twinkle Little Star",
+        "composer": {
+          "firstName": "Jane",
+          "lastName": "Doe",
+          "genre": "Children's Music"
+        },
+        "genre": "Children's Music",
+        "difficultyRate": 1,
+        "melodyStructure": 0.75,
+        "note": "C4, C4, G4, G4, A4, A4, G4"
+      }
+    ],
+    "leaderboard": [
+      {
+        "user": {
+          "firstName": "Alice",
+          "lastName": "Smith",
+          "username": "asmith",
+          "email": "alice.smith@example.com",
+          "password": "securePassword",
+          "bankData": []
+        },
+        "totalAmount": 1250.50
+      }
+    ],
+    "songUpload": "user123_song.mp3",
+    "user": {
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "username": "bjohnson",
+      "email": "bob.johnson@example.com",
+      "password": "anotherStrongPassword",
+      "bankData": []
+    },
+    "login": "string",
+    "username": "asmith",
+    "password": "password123",
+    "loginUsername": "asmith",
+    "loginPassword": "securePassword"
+  },
+  {
+    "songList": [
+      {
+        "songName": "Ode to Joy",
+        "composer": {
+          "firstName": "Ludwig",
+          "lastName": "van Beethoven",
+          "genre": "Classical"
+        },
+        "genre": "Classical",
+        "difficultyRate": 3,
+        "melodyStructure": 0.9,
+        "note": "E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4"
+      }
+    ],
+    "leaderboard": [
+      {
+        "user": {
+          "firstName": "Charlie",
+          "lastName": "Brown",
+          "username": "cbrown",
+          "email": "charlie.brown@example.com",
+          "password": "verySafePassword",
+          "bankData": []
+        },
+        "totalAmount": 980.75
+      }
+    ],
+    "songUpload": "Charlie Brown Theme",
+    "user": {
+      "firstName": "Eve",
+      "lastName": "Williams",
+      "username": "ewilliams",
+      "email": "eve.williams@example.com",
+      "password": "evenMoreSecurePassword",
+      "bankData": []
+    },
+    "login": "string",
+    "username": "cbrown",
+    "password": "password456",
+    "loginUsername": "cbrown",
+    "loginPassword": "verySafePassword"
+  }
+]
