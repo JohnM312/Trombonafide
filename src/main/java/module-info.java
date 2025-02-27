@@ -2,6 +2,7 @@ module com.trombonafide {
     requires javafx.controls;
     requires javafx.fxml;
     requires json.simple;
+    requires jfugue;
 
     opens com.trombonafide to javafx.fxml;
     exports com.trombonafide;
