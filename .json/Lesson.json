@@ -1,11 +1,13 @@
 [
   {
+    "uuid": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
     "title": "Introduction to Trombone",
     "content": "This lesson will cover basic Trombone techniques, including fingerings and basic exercises.",
     "feedback": true,
     "hint": "Remember to keep your ommature firm to play a note."
   },
   {
+    "uuid": "bcdef012-3456-789a-bcde-f0123456789a",
     "title": "Music Theory",
     "content": "This lesson explores the basics on how to read sheet music and its elements.",
     "feedback": true,
