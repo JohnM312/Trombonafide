@@ -1,5 +1,6 @@
 [
   {
+    "uuid": "def12345-6789-abcd-ef01-23456789abcd",
     "songName": "76 Trombones",
     "composer": {
       "firstName": "Meredith",
@@ -12,6 +13,7 @@
     "note": "Bb3, D4, F4, Bb4, Bb4, Ab4, G4, F4"
   },
   {
+    "uuid": "ef01abcd-2345-6789-cdef-0123456789ab",
     "songName": "Stardust",
     "composer": {
       "firstName": "Hoagy",
