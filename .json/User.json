@@ -1,5 +1,6 @@
 [
   {
+    "uuid": "f1a2b3c4-d5e6-7890-1abc-def012345678",
     "firstName": "Alice",
     "lastName": "Smith",
     "username": "asmith",
@@ -14,6 +15,7 @@
     ]
   },
   {
+    "uuid": "12345abc-6789-0def-1abc-def012345678",
     "firstName": "Bob",
     "lastName": "Johnson",
     "username": "bjohnson",
