@@ -1,14 +1,14 @@
 [
   {
     "uuid": "def12345-6789-abcd-ef01-23456789abcd",
-    "songName": "76 Trombones",
+    "songName": "Centuries",
     "composer": {
-      "firstName": "Meredith",
-      "lastName": "Willson",
-      "genre": "Musical Theatre"
+      "firstName": "Michael",
+      "lastName": "Kamuf",
+      "genre": "Concert Rock"
     },
-    "genre": "March",
-    "difficultyRate": 5,
+    "genre": "Rock",
+    "difficultyRate": 3,
     "melodyStructure": 0.92,
     "note": "Bb3, D4, F4, Bb4, Bb4, Ab4, G4, F4"
   },
