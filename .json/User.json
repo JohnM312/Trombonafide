@@ -6,13 +6,6 @@
     "username": "asmith",
     "email": "alice.smith@example.com",
     "password": "securePassword123",
-    "bankData": [
-      {
-        "accountNumber": "1234567890",
-        "bankName": "First National Bank",
-        "balance": 500.75
-      }
-    ]
   },
   {
     "uuid": "12345abc-6789-0def-1abc-def012345678",
@@ -21,12 +14,5 @@
     "username": "bjohnson",
     "email": "bob.johnson@example.com",
     "password": "anotherStrongPassword",
-    "bankData": [
-      {
-        "accountNumber": "9876543210",
-        "bankName": "Second United Bank",
-        "balance": 1250.00
-      }
-    ]
   }
 ]
