@@ -6,6 +6,7 @@ module com.trombonafide {
 
     opens com.trombonafide to javafx.fxml;
     exports com.trombonafide;
+    exports com.trombonafide.util;
 
     opens com.model to javafx.fxml;
     exports com.model;
