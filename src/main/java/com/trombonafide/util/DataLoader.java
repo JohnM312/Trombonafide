@@ -1,24 +1,50 @@
 package com.trombonafide.util;
 
-import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.model.User;
-import com.model.Lesson;
 import com.model.Song;
+import com.model.Lesson;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataLoader {
-    private static final String USER_FILE = Constants.USER_FILE;
-    private static final String LESSON_FILE = Constants.LESSON_FILE;
-    private static final String SONG_FILE = Constants.SONG_FILE;
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public List<User> loadUsers() {
-        // Implementation to read from USER_FILE
+    public static List<User> loadUsers() {
+        try {
+            File file = new File(Constants.USER_FILE);
+            if (!file.exists()) return new ArrayList<>();
+            return objectMapper.readValue(file, new TypeReference<List<User>>() {});
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 
-    public List<Lesson> loadLessons() {
-        // Implementation to read from LESSON_FILE
+    public static List<Song> loadSongs() {
+        try {
+            File file = new File(Constants.SONG_FILE);
+            if (!file.exists()) return new ArrayList<>();
+            return objectMapper.readValue(file, new TypeReference<List<Song>>() {});
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 
-    public List<Song> loadSongs() {
-        // Implementation to read from SONG_FILE
+    public static List<Lesson> loadLessons() {
+        try {
+            File file = new File(Constants.LESSON_FILE);
+            if (!file.exists()) return new ArrayList<>();
+            return objectMapper.readValue(file, new TypeReference<List<Lesson>>() {});
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 }

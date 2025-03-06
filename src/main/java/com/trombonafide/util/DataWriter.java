@@ -1,24 +1,38 @@
 package com.trombonafide.util;
 
-import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.model.User;
-import com.model.Lesson;
 import com.model.Song;
+import com.model.Lesson;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 public class DataWriter {
-    private static final String USER_FILE = Constants.USER_FILE;
-    private static final String LESSON_FILE = Constants.LESSON_FILE;
-    private static final String SONG_FILE = Constants.SONG_FILE;
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public void saveUsers(List<User> users) {
-        // Implementation to write to USER_FILE
+    public static void saveUsers(List<User> users) {
+        try {
+            objectMapper.writeValue(new File(Constants.USER_FILE), users);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void saveLessons(List<Lesson> lessons) {
-        // Implementation to write to LESSON_FILE
+    public static void saveSongs(List<Song> songs) {
+        try {
+            objectMapper.writeValue(new File(Constants.SONG_FILE), songs);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void saveSongs(List<Song> songs) {
-        // Implementation to write to SONG_FILE
+    public static void saveLessons(List<Lesson> lessons) {
+        try {
+            objectMapper.writeValue(new File(Constants.LESSON_FILE), lessons);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
