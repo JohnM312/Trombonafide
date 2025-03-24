@@ -1,11 +1,13 @@
+package com.trombonafide;
+
 /**
  * Facade class for music system
  * @author Aiden Campbell
  */
 
-public class MusicSystemFACADE {
+    public class MusicSystemFacade {
     
-    private static MusicSystemFACADE facade; // Singleton instance
+    private static MusicSystemFacade facade; // Singleton instance
 
     private static UserList userList = UserList.getInstance();
     private static LessonList lessonList = LessonList.getInstance();
@@ -13,14 +15,14 @@ public class MusicSystemFACADE {
 
     private User currentUser;
 
-    private MusicSystemFACADE() {
+    private MusicSystemFacade() {
         this.currentUser = new User("guest", "guest", "guest");
     }
 
     // Singleton accessor
-    public static MusicSystemFACADE getFacadeInstance() {
+    public static MusicSystemFacade getFacadeInstance() {
         if (facade == null) {
-            facade = new MusicSystemFACADE();
+            facade = new MusicSystemFacade();
         }
         return facade;
     }
