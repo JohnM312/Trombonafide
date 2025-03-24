@@ -1,3 +1,5 @@
+package com.trombonafide;
+
 public class Note {
     private String pitch;
     private int octave;

@@ -1,3 +1,5 @@
+package com.trombonafide;
+
 public class TimeSignature {
     private int numerator;
     private int denominator;
