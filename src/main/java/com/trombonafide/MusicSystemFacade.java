@@ -1,5 +1,9 @@
 package com.trombonafide;
 
+import com.model.LessonList;
+import com.model.User;
+import com.model.UserList;
+
 /**
  * Facade class for music system
  * @author Aiden Campbell
@@ -27,11 +31,44 @@ package com.trombonafide;
         return facade;
     }
 
-    // Users login
+    // Users part
+    public boolean register(String firstName, String lastName, String username, String password, String email,
+                            String phoneNumber, String type) {
+        if (findUser(username, password) == null) {
+            User newUser = new User(firstName, lastName, username,
+            password, email, phoneNumber, type);
+            userList.addUser(newUser);
+            this.currentUser = newUser;
+            return true;
+        }
+        return false;
+    }
+
     public boolean login(String username, String password) {
-        User user = userList.findUser(username, password);
-        if (user == null) return false;
-        currentUser = user;
+        User user = findUser(username, password);
+        if (user != null) {
+            this.currentUser = user;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean logout() {
+        if (currentUser == null) return false;
+        currentUser = null;
         return true;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    private User findUser(String username, String password) {
+        for (User user : userList.getUsers()) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        return null;
     }
 }
