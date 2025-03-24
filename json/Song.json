@@ -2,7 +2,7 @@
   {
     "uuid": "def12345-6789-abcd-ef01-23456789abcd",
     "songName": "Centuries",
-    "composer": {
+    "artist": {
       "firstName": "Michael",
       "lastName": "Kamuf",
       "genre": "Concert Rock"
@@ -15,7 +15,7 @@
   {
     "uuid": "ef01abcd-2345-6789-cdef-0123456789ab",
     "songName": "Stardust",
-    "composer": {
+    "artist": {
       "firstName": "Hoagy",
       "lastName": "Carmichael",
       "genre": "Jazz"
