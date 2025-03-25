@@ -18,7 +18,8 @@ import com.model.UserList;
 
     private static UserList userList = UserList.getInstance();
     private static LessonList lessonList = LessonList.getInstance();
-    private static SongList songList = new SongList();
+    private static SongList songList = SongList.getInstance();
+
 
     private User currentUser;
 
