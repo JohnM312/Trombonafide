@@ -5,9 +5,17 @@ import java.util.List;
 
 public class UserList {
     private List<User> users;
+    private static UserList instance;
 
-    public UserList() {
+    private UserList() {
         this.users = new ArrayList<>();
+    }
+
+    public static UserList getInstance() {
+        if (instance == null) {
+            instance = new UserList();
+        }
+        return instance;
     }
 
     public List<User> getUsers() {

@@ -5,19 +5,35 @@ import java.util.UUID;
 
 public class User implements Serializable {
     private UUID uuid;
+    private String firstName;
+    private String lastName;
     private String username;
     private String password;
     private String email;
+    private String phoneNumber;
+    private String type;
 
     public User() {
         this.uuid = UUID.randomUUID();
     }
 
     public User(String username, String password, String email) {
-        this.uuid = UUID.randomUUID();
+        this();
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+    public User(String firstName, String lastName, String username, 
+               String password, String email, String phoneNumber, String type) {
+        this();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.type = type;
     }
 
     public UUID getUuid() { return uuid; }

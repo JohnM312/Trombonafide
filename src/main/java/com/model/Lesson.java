@@ -18,6 +18,14 @@ public class Lesson implements Serializable {
         this.description = description;
     }
 
+    public String getTitle() {
+        return lessonName;
+    }
+
+    public String getContent() {
+        return description;
+    }
+
     public UUID getUuid() { return uuid; }
     public void setUuid(UUID uuid) { this.uuid = uuid; }
 

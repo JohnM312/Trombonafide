@@ -5,9 +5,17 @@ import java.util.List;
 
 public class SongList {
     private List<Song> songs;
+    private static SongList instance;
 
-    public SongList() {
+    private SongList() {
         this.songs = new ArrayList<>();
+    }
+
+    public static SongList getInstance() {
+        if (instance == null) {
+            instance = new SongList();
+        }
+        return instance;
     }
 
     public List<Song> getSongs() {
@@ -20,6 +28,13 @@ public class SongList {
 
     public void removeSong(Song song) {
         songs.remove(song);
+    }
+
+    public Song getSongByTitle(String title) {
+        return songs.stream()
+            .filter(s -> s.getTitle().equalsIgnoreCase(title))
+            .findFirst()
+            .orElse(null);
     }
 
     @Override

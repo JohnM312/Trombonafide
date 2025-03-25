@@ -8,4 +8,9 @@
   "username" : "john_mai",
   "password" : "gokusolos!!!",
   "email" : "dragonballjohn@yahoo.com"
+}, {
+  "uuid" : "faba0292-378b-4ea9-8345-1aa703ce0837",
+  "username" : "testuser",
+  "password" : "lasdf",
+  "email" : "testuser@yahoo.com"
 } ]

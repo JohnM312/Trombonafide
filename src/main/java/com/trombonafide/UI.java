@@ -75,18 +75,19 @@ public class UI {
     }
 
     private static void exportSheetMusic(Song song) {
-        try (FileWriter writer = new FileWriter("src/main/resources/SheetMusicOutput.txt")){
+        if (song == null || song.getNotes() == null) {
+            System.out.println("No song data to export");
+            return;
+        }
+        
+        try (FileWriter writer = new FileWriter("src/main/resources/SheetMusicOutput.txt")) {
             writer.write("Sheet Music For: " + song.getTitle() + "\n");
-            for (String note : song.getNotes()) {
-                writer.write(note + " ");
-            }
-            System.out.println("Sheet music exported to SheetMusicOutput.txt");
-
-            } catch (IOException e){
-                System.out.println("Failed to export sheet music.");
-                e.printStackTrace();
-            }
+            writer.write(song.getNotes());
+            System.out.println("Sheet music exported successfully");
+        } catch (IOException e) {
+            System.out.println("Export failed: " + e.getMessage());
         }
     }
+}
     
 

@@ -5,9 +5,17 @@ import java.util.List;
 
 public class LessonList {
     private List<Lesson> lessons;
+    private static LessonList instance;
 
-    public LessonList() {
+    private LessonList() {
         this.lessons = new ArrayList<>();
+    }
+
+    public static LessonList getInstance() {
+        if (instance == null) {
+            instance = new LessonList();
+        }
+        return instance;
     }
 
     public List<Lesson> getLessons() {

@@ -7,32 +7,25 @@ import com.model.SongList;
 import com.model.User;
 import com.model.UserList;
 import com.model.Artist;
-
 import java.util.List;
 import java.util.ArrayList;
+import com.trombonafide.util.MusicPlayer;
+
 
 /**
- * Facade class for music system
+ * this is the MusicSystemFacade class for trombonafide
+ * 
  * @author Aiden Campbell
  */
 
-    public class MusicSystemFacade {
-    
-    private static MusicSystemFacade facade; // Singleton instance
-
-    private static UserList userList = UserList.getInstance();
-    private static LessonList lessonList = LessonList.getInstance();
-    private static SongList songList = SongList.getInstance();
-
-
+public class MusicSystemFacade {
+    private static MusicSystemFacade facade;
     private User currentUser;
 
     private MusicSystemFacade() {
-        this.currentUser = new User("guest", "guest", 
-        "guest");
+        this.currentUser = new User("guest", "guest", "guest");
     }
 
-    // Singleton accessor
     public static MusicSystemFacade getFacadeInstance() {
         if (facade == null) {
             facade = new MusicSystemFacade();
@@ -40,13 +33,13 @@ import java.util.ArrayList;
         return facade;
     }
 
-    // Users part
-    public boolean register(String firstName, String lastName, String username, String password, String email,
-                            String phoneNumber, String type) {
+    // User methods
+    public boolean register(String firstName, String lastName, String username, 
+                          String password, String email, String phoneNumber, String type) {
         if (findUser(username, password) == null) {
             User newUser = new User(firstName, lastName, username,
-            password, email, phoneNumber, type);
-            userList.addUser(newUser);
+                                  password, email, phoneNumber, type);
+            UserList.getInstance().addUser(newUser);
             this.currentUser = newUser;
             return true;
         }
@@ -73,7 +66,7 @@ import java.util.ArrayList;
     }
 
     private User findUser(String username, String password) {
-        for (User user : userList.getUsers()) {
+        for (User user : UserList.getInstance().getUsers()) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return user;
             }
@@ -81,15 +74,15 @@ import java.util.ArrayList;
         return null;
     }
 
-    // lesson part
+    // Lesson methods
     public boolean addLesson(String lessonTitle, String content) {
         Lesson lesson = new Lesson(lessonTitle, content);
-        lessonList.addLesson(lesson);
+        LessonList.getInstance().addLesson(lesson);
         return true;
     }
 
     public Lesson getLessonByTitle(String title) {
-        for (Lesson lesson : lessonList.getLessons()) {
+        for (Lesson lesson : LessonList.getInstance().getLessons()) {
             if (lesson.getTitle().equalsIgnoreCase(title)) {
                 return lesson;
             }
@@ -106,24 +99,36 @@ import java.util.ArrayList;
         }
         return false;
     }
-    //song part
+
+    // Song methods
     public boolean addSong(String title, String[] notes) {
         Song song = new Song(title, notes);
-        songList.addSong(song);
+        SongList.getInstance().addSong(song);
         return true;
     }
+
     public Song getSongByTitle(String title) {
-        return songList.getSongByTitle(title);
+        return SongList.getInstance().getSongByTitle(title);
     }
+
     public boolean playSong(String title) {
-        Song song = songList.getSongByTitle(title);
-        if (song != null) {
-            for (String note : song.getNotes()) {
-                Music.playNote(note);
-                try {
-                    Thread.sleep(50); // Can Adjust playback speed later
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+        Song song = SongList.getInstance().getSongByTitle(title);
+        if (song != null && song.getNotes() != null) {
+            System.out.println("Playing: " + song.getTitle());
+            
+            // Split notes and handle empty/null cases
+            String[] notes = song.getNotes().split("\\s+"); // Split by whitespace
+            for (String note : notes) {
+                if (!note.trim().isEmpty()) {
+                    MusicPlayer.playNote(note.trim());
+                    
+                    // Add delay between notes (adjust 200ms as needed)
+                    try {
+                        Thread.sleep(200); 
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        return false;
+                    }
                 }
             }
             return true;
@@ -133,12 +138,11 @@ import java.util.ArrayList;
 
     public List<Song> searchSongsByArtist(Artist artist) {
         List<Song> result = new ArrayList<>();
-        for (Song song : SongList.getInstance().getSongs()){
+        for (Song song : SongList.getInstance().getSongs()) {
             if (song.getArtist().equalsIgnoreCase(artist.getName())) {
                 result.add(song);
             }
         }
         return result;
     }
-
 }

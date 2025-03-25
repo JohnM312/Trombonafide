@@ -22,6 +22,10 @@ public class Song implements Serializable {
         this.notes = notes;
     }
 
+    public Song(String title, String[] notes) {
+        this(title, "Unknown", "Unspecified", String.join(" ", notes));
+    }
+
     public UUID getUuid() { return uuid; }
     public void setUuid(UUID uuid) { this.uuid = uuid; }
 
