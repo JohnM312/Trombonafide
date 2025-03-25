@@ -1,6 +1,9 @@
 package com.trombonafide;
 
+import com.model.Lesson;
 import com.model.LessonList;
+import com.model.Song;
+import com.model.SongList;
 import com.model.User;
 import com.model.UserList;
 
@@ -15,12 +18,13 @@ import com.model.UserList;
 
     private static UserList userList = UserList.getInstance();
     private static LessonList lessonList = LessonList.getInstance();
-    private static ProgressTracker progressTracker = ProgressTracker.getInstance();
+    private static SongList songList = new SongList();
 
     private User currentUser;
 
     private MusicSystemFacade() {
-        this.currentUser = new User("guest", "guest", "guest");
+        this.currentUser = new User("guest", "guest", 
+        "guest");
     }
 
     // Singleton accessor
@@ -71,4 +75,55 @@ import com.model.UserList;
         }
         return null;
     }
+
+    // lesson part
+    public boolean addLesson(String lessonTitle, String content) {
+        Lesson lesson = new Lesson(lessonTitle, content);
+        lessonList.addLesson(lesson);
+        return true;
+    }
+
+    public Lesson getLessonByTitle(String title) {
+        for (Lesson lesson : lessonList.getLessons()) {
+            if (lesson.getTitle().equalsIgnoreCase(title)) {
+                return lesson;
+            }
+        }
+        return null;
+    }
+
+    public boolean startLesson(String title) {
+        Lesson lesson = getLessonByTitle(title);
+        if (lesson != null) {
+            System.out.println("Starting lesson: " + lesson.getTitle());
+            System.out.println(lesson.getContent());
+            return true;
+        }
+        return false;
+    }
+    //song part
+    public boolean addSong(String title, String[] notes) {
+        Song song = new Song(title, notes);
+        songList.addSong(song);
+        return true;
+    }
+    public Song getSongByTitle(String title) {
+        return songList.getSongByTitle(title);
+    }
+    public boolean playSong(String title) {
+        Song song = songList.getSongByTitle(title);
+        if (song != null) {
+            for (String note : song.getNotes()) {
+                Music.playNote(note);
+                try {
+                    Thread.sleep(50); // Can Adjust playback speed later
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
 }
