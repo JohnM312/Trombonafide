@@ -4,21 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserList {
-    private static UserList userList = null;
     private List<User> users;
 
     public UserList() {
         this.users = new ArrayList<>();
     }
 
-    public static UserList getInstance() {
-        if (userList == null) {
-            userList = new UserList();
-
-        }
-        return userList;
-    }
-    
     public List<User> getUsers() {
         return users;
     }

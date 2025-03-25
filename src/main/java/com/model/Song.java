@@ -8,15 +8,13 @@ public class Song implements Serializable {
     private String title;
     private String artist;
     private String genre;
-    private String firstName;
-    private String lastName;
-    private String[] notes;
+    private String notes;
 
     public Song() {
         this.uuid = UUID.randomUUID();
     }
 
-    public Song(String title, String artist, String genre) {
+    public Song(String title, String artist, String genre, String notes) {
         this.uuid = UUID.randomUUID();
         this.title = title;
         this.artist = artist;
@@ -36,10 +34,9 @@ public class Song implements Serializable {
     public String getGenre() { return genre; }
     public void setGenre(String genre) { this.genre = genre; }
 
-    public String[] getNotes() { return notes; }
-    public void setNotes(String[] notes) {this.notes = notes;}
+    public String getNotes() { return notes; }
+    public void setNotes(String notes) { this.notes = notes; }
 
-    public String getName() {return firstName + " " + lastName; }
     @Override
     public String toString() {
         return "Song{" +
@@ -47,6 +44,7 @@ public class Song implements Serializable {
                 ", title='" + title + '\'' +
                 ", artist='" + artist + '\'' +
                 ", genre='" + genre + '\'' +
+                ", notes='" + notes + '\'' +
                 '}';
     }
 }

@@ -1,0 +1,19 @@
+[ {
+  "uuid" : "6beda097-538a-4b0c-923a-3c27704126a2",
+  "title" : "C Scale",
+  "artist" : "None",
+  "genre" : "Scale",
+  "notes" : "Ch Dh Eh Fh Gh Ah Bh C6h"
+}, {
+  "uuid" : "e252b491-c0d3-4e03-97b8-bbd9b230f3f5",
+  "title" : "Random Nonsense",
+  "artist" : "Trent",
+  "genre" : "Bababooey",
+  "notes" : "Ch Aw Bq Dq C6h Dh Aw"
+}, {
+  "uuid" : "19e056b5-89cd-4aea-8ebb-f6ebfdb0ad13",
+  "title" : "Test",
+  "artist" : "Trent",
+  "genre" : "Test",
+  "notes" : "C B A D"
+} ]

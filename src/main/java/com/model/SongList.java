@@ -4,20 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SongList {
-    private static SongList instance = null;
     private List<Song> songs;
 
     public SongList() {
         this.songs = new ArrayList<>();
     }
 
-    public static SongList getInstance() {
-        if (instance == null) {
-            instance = new SongList();
-        }
-        return instance;
-    }
-    
     public List<Song> getSongs() {
         return songs;
     }
