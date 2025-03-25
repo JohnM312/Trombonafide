@@ -6,6 +6,10 @@ import com.model.Song;
 import com.model.SongList;
 import com.model.User;
 import com.model.UserList;
+import com.model.Artist;
+
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Facade class for music system
@@ -125,6 +129,16 @@ import com.model.UserList;
             return true;
         }
         return false;
+    }
+
+    public List<Song> searchSongsByArtist(Artist artist) {
+        List<Song> result = new ArrayList<>();
+        for (Song song : SongList.getInstance().getSongs()){
+            if (song.getArtist().equalsIgnoreCase(artist.getName())) {
+                result.add(song);
+            }
+        }
+        return result;
     }
 
 }
