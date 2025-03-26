@@ -3,6 +3,7 @@ package com.model;
 import java.io.Serializable;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Represents a music lesson with content and learning hints.
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author Trent Petersen
  * @since 1.0
  */
+@JsonPropertyOrder({"uuid", "title", "content", "hint"})
 public class Lesson implements Serializable {
     private UUID uuid;
     private String lessonTitle;
@@ -51,7 +53,7 @@ public class Lesson implements Serializable {
 
     // Setters
     public void setUuid(UUID uuid) { this.uuid = uuid; }
-    public void setLessonName(String lessonTitle) { this.lessonTitle = lessonTitle; }
+    public void setTitle(String lessonTitle) { this.lessonTitle = lessonTitle; }
     public void setContent(String content) { this.content = content; }
     public void setHint(String hint) { this.hint = hint; }
 
@@ -61,7 +63,7 @@ public class Lesson implements Serializable {
     @Override
     public String toString() {
         return String.format(
-            "Lesson[uuid=%s, name='%s', content=%d chars, hint='%s']",
+            "Lesson[uuid=%s, title='%s', content=%d chars, hint='%s']",
             uuid.toString().substring(0, 8),
             lessonTitle,
             content != null ? content.length() : 0,

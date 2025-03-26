@@ -1,6 +1,11 @@
 [ {
-  "uuid" : "c1b5778a-96ea-4002-819a-671d82deddb8",
+  "uuid" : "3b9e2f19-b921-4d61-8857-dd7f5a542a34",
+  "title" : "Test Lesson",
   "content" : "This lesson is a test",
-  "hint" : "just a test",
-  "title" : "Test Lesson"
+  "hint" : "just a test"
+}, {
+  "uuid" : "e7b7e0c7-a929-46ec-8369-f6b54af411f4",
+  "title" : "C Scale",
+  "content" : "Play this lesson to practice the C scale.",
+  "hint" : "Tighten your embouchure as you go up the scale to hit the higher notes."
 } ]
