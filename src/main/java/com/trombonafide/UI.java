@@ -14,11 +14,19 @@ import com.trombonafide.util.DataWriter;
 
 
 /**
- * this is the UI class for trombonafide
+ * this is the UI class for trombonafide. It provides a basic demonstration of how the Trombonafide music system works
+ * it shows user registration, login, song searching, playback, and exporting sheet music.
+ * 
+ * this class intereacts with the {@code MusicSystem Facade} to simulate a sample user
+ * 
  * 
  * @author Andrew Lim
  */
 public class UI {   
+    /**
+     * 
+     * @param args
+     */
     public static void main (String[] args){
         MusicSystemFacade system = MusicSystemFacade.getFacadeInstance();
 
