@@ -13,4 +13,9 @@
   "username" : "testuser",
   "password" : "lasdf",
   "email" : "testuser@yahoo.com"
+}, {
+  "uuid" : "ad41d780-eed1-4d9a-8030-e2e0c7802f8f",
+  "username" : "test user",
+  "password" : "test",
+  "email" : "tester@gmail.com"
 } ]

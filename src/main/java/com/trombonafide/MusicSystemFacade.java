@@ -75,23 +75,23 @@ public class MusicSystemFacade {
     }
 
     // Lesson methods
-    public boolean addLesson(String lessonTitle, String content) {
-        Lesson lesson = new Lesson(lessonTitle, content);
+    public boolean addLesson(String lessonTitle, String content, String hint) {
+        Lesson lesson = new Lesson(lessonTitle, content, hint);
         LessonList.getInstance().addLesson(lesson);
         return true;
     }
 
-    public Lesson getLessonByTitle(String title) {
+    public Lesson getLessonByTitle(String lessonTitle) {
         for (Lesson lesson : LessonList.getInstance().getLessons()) {
-            if (lesson.getTitle().equalsIgnoreCase(title)) {
+            if (lesson.getTitle().equalsIgnoreCase(lessonTitle)) {
                 return lesson;
             }
         }
         return null;
     }
 
-    public boolean startLesson(String title) {
-        Lesson lesson = getLessonByTitle(title);
+    public boolean startLesson(String lessonTitle) {
+        Lesson lesson = getLessonByTitle(lessonTitle);
         if (lesson != null) {
             System.out.println("Starting lesson: " + lesson.getTitle());
             System.out.println(lesson.getContent());

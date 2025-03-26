@@ -10,4 +10,10 @@
   "artist" : "Trent",
   "genre" : "Bababooey",
   "notes" : "Ch Aw Bq Dq C6h Dh Aw"
+}, {
+  "uuid" : "198a4db5-4d7e-49d6-91dd-adbd4d1dbbc7",
+  "title" : "test",
+  "artist" : "test",
+  "genre" : "test",
+  "notes" : "A B C D E F"
 } ]

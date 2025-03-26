@@ -1,13 +1,6 @@
 [ {
-  "uuid" : "d1ecd7e1-aa19-489b-b4db-a8cecea18329",
-  "lessonName" : "C Scale",
-  "description" : "Practice the C Scale with your instrument.",
-  "content" : "Practice the C Scale with your instrument.",
-  "title" : "C Scale"
-}, {
-  "uuid" : "a16b738a-95f3-42b6-80b7-e6a233ef2a73",
-  "lessonName" : "Test Lesson",
-  "description" : "This Lesson is a test.",
-  "content" : "This Lesson is a test.",
+  "uuid" : "c1b5778a-96ea-4002-819a-671d82deddb8",
+  "content" : "This lesson is a test",
+  "hint" : "just a test",
   "title" : "Test Lesson"
 } ]

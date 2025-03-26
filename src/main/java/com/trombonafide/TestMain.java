@@ -57,13 +57,15 @@ public class TestMain {
                     break;
 
                 case 3:
-                    System.out.print("Enter lesson name: ");
-                    String lessonName = scanner.nextLine();
-                    System.out.print("Enter lesson description: ");
-                    String description = scanner.nextLine();
+                    System.out.print("Enter lesson title: ");
+                    String lessonTitle = scanner.nextLine();
+                    System.out.print("Enter lesson content: ");
+                    String content = scanner.nextLine();
+                    System.out.print("Enter hint: ");
+                    String hint = scanner.nextLine();
 
                     List<Lesson> newLessons = new ArrayList<>();
-                    newLessons.add(new Lesson(lessonName, description));
+                    newLessons.add(new Lesson(lessonTitle, content, hint));
                     DataWriter.saveLessons(newLessons);
                     System.out.println("Lesson added successfully!");
                     break;
