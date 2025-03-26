@@ -24,8 +24,9 @@ import com.trombonafide.util.DataWriter;
  */
 public class UI {   
     /**
+     * The main method shows functionality as user registration and login, song searching, song playback, and sheet music exporting
      * 
-     * @param args
+     * @param args command-line arguments 
      */
     public static void main (String[] args){
         MusicSystemFacade system = MusicSystemFacade.getFacadeInstance();
