@@ -10,7 +10,7 @@
     "genre": "Rock",
     "difficultyRate": 3,
     "melodyStructure": 0.92,
-    "note": "Bb3, D4, F4, Bb4, Bb4, Ab4, G4, F4"
+    "notes": "Bb3, D4, F4, Bb4, Bb4, Ab4, G4, F4"
   },
   {
     "uuid": "ef01abcd-2345-6789-cdef-0123456789ab",
@@ -23,6 +23,6 @@
     "genre": "Jazz Standard",
     "difficultyRate": 4,
     "melodyStructure": 0.88,
-    "note": "Eb4, F4, G4, Bb4, Db5, C5, Bb4, Ab4"
+    "notes": "Eb4, F4, G4, Bb4, Db5, C5, Bb4, Ab4"
   }
 ]
