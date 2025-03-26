@@ -13,8 +13,11 @@ public class User implements Serializable {
     private String phoneNumber;
     private String type;
 
+    private UserProgress progress;
+
     public User() {
         this.uuid = UUID.randomUUID();
+        this.progress = new UserProgress();
     }
 
     public User(String username, String password, String email) {
@@ -24,7 +27,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public User(String firstName, String lastName, String username, 
+    public User(String firstName, String lastName, String username,
             String password, String email, String phoneNumber, String type) {
         this();
         this.firstName = firstName;
@@ -47,6 +50,10 @@ public class User implements Serializable {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public UserProgress getProgress() {return progress;}
+    
+    public void setProgress(UserProgress progress) {this.progress = progress;}
 
     @Override
     public String toString() {
