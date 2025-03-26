@@ -83,6 +83,13 @@ public class UI {
 
     }
 
+    /**
+     * Exports notes of the song to a text file located at
+     * {@code src/main/resources/SheetMusicOutput.txt}.
+     * 
+     * @param song the Song object whose notes will be exported
+     *  if null or has no notes, the method will not export anything
+     */
     private static void exportSheetMusic(Song song) {
         if (song == null || song.getNotes() == null) {
             System.out.println("No song data to export");
