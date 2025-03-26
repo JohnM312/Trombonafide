@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.model.User;
 import com.model.Song;
+import com.model.Artist;
 import com.model.Lesson;
 import com.trombonafide.util.DataWriter;
 import com.trombonafide.util.DataLoader;
@@ -41,20 +42,37 @@ public class TestMain {
                     break;
 
                 case 2:
-                    System.out.print("Enter song title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Enter artist: ");
-                    String artist = scanner.nextLine();
-                    System.out.print("Enter genre: ");
-                    String genre = scanner.nextLine();
-                    System.out.print("Enter notes: ");
-                    String notes = scanner.nextLine();
-
-                    List<Song> newSongs = new ArrayList<>();
-                    newSongs.add(new Song(title, artist, genre, notes));
-                    DataWriter.saveSongs(newSongs);
-                    System.out.println("Song added successfully!");
-                    break;
+                System.out.print("Enter song title: ");
+                String songTitle = scanner.nextLine();
+                System.out.print("Enter artist first name: ");
+                String artistFirstName = scanner.nextLine();
+                System.out.print("Enter artist last name: ");
+                String artistLastName = scanner.nextLine();
+                System.out.print("Enter artist genre: ");
+                String artistGenre = scanner.nextLine();
+                System.out.print("Enter song genre: ");
+                String songGenre = scanner.nextLine();
+                System.out.print("Enter song notes (comma-separated): ");
+                String songNotes = scanner.nextLine();
+                System.out.print("Enter difficulty rating (1–5): ");
+                int songDifficulty = Integer.parseInt(scanner.nextLine());
+            
+                System.out.print("Enter melody structure rating (0.0–1.0): ");
+                double songMelody = Double.parseDouble(scanner.nextLine());
+            
+                // Create artist and song
+                Artist songArtist = new Artist(artistFirstName, artistLastName,
+                artistGenre);
+                Song newSong = new Song(songTitle, songArtist, songGenre,
+                songNotes, songDifficulty, songMelody);
+            
+                List<Song> newSongs = new ArrayList<>();
+                newSongs.add(newSong);
+                DataWriter.saveSongs(newSongs);
+            
+                System.out.println("Song added successfully!");
+                break;
+            
 
                 case 3:
                     System.out.print("Enter lesson title: ");

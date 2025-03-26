@@ -15,4 +15,20 @@ public class Artist {
         return firstName + " " + lastName;
     }
 
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getGenre() { return genre; }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Artist{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
 }

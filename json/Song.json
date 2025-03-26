@@ -1,7 +1,7 @@
 [
   {
     "uuid": "def12345-6789-abcd-ef01-23456789abcd",
-    "songName": "Centuries",
+    "title": "Centuries",
     "artist": {
       "firstName": "Michael",
       "lastName": "Kamuf",
@@ -14,7 +14,7 @@
   },
   {
     "uuid": "ef01abcd-2345-6789-cdef-0123456789ab",
-    "songName": "Stardust",
+    "title": "Stardust",
     "artist": {
       "firstName": "Hoagy",
       "lastName": "Carmichael",

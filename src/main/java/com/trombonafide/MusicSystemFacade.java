@@ -35,10 +35,10 @@ public class MusicSystemFacade {
 
     // User methods
     public boolean register(String firstName, String lastName, String username, 
-                          String password, String email, String phoneNumber, String type) {
+                        String password, String email, String phoneNumber, String type) {
         if (findUser(username, password) == null) {
             User newUser = new User(firstName, lastName, username,
-                                  password, email, phoneNumber, type);
+                                password, email, phoneNumber, type);
             UserList.getInstance().addUser(newUser);
             this.currentUser = newUser;
             return true;
@@ -124,7 +124,7 @@ public class MusicSystemFacade {
                     
                     // Add delay between notes (adjust 200ms as needed)
                     try {
-                        Thread.sleep(200); 
+                        Thread.sleep(200);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                         return false;
@@ -139,7 +139,8 @@ public class MusicSystemFacade {
     public List<Song> searchSongsByArtist(Artist artist) {
         List<Song> result = new ArrayList<>();
         for (Song song : SongList.getInstance().getSongs()) {
-            if (song.getArtist().equalsIgnoreCase(artist.getName())) {
+            if (song.getArtist().getFullName().equalsIgnoreCase
+            (artist.getFullName())) {
                 result.add(song);
             }
         }
