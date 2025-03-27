@@ -1,14 +1,15 @@
 package com.trombonafide;
 
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-import com.model.User;
-import com.model.Song;
+import java.util.Scanner;
+
 import com.model.Artist;
 import com.model.Lesson;
-import com.trombonafide.util.DataWriter;
+import com.model.Song;
+import com.model.User;
 import com.trombonafide.util.DataLoader;
+import com.trombonafide.util.DataWriter;
 
 public class TestMain {
     public static void main(String[] args) {
@@ -66,10 +67,13 @@ public class TestMain {
                 Song newSong = new Song(songTitle, songArtist, songGenre,
                 songNotes, songDifficulty, songMelody);
             
-                List<Song> newSongs = new ArrayList<>();
-                newSongs.add(newSong);
-                DataWriter.saveSongs(newSongs);
-            
+                List<Song> allSongs = DataLoader.loadSongs();
+                if (allSongs == null) {
+                    allSongs = new ArrayList<>();
+                }
+                allSongs.add(newSong);
+                
+                DataWriter.saveSongs(allSongs);
                 System.out.println("Song added successfully!");
                 break;
             
