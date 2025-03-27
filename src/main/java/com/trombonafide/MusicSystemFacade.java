@@ -113,6 +113,16 @@ public class MusicSystemFacade {
     }
 
     /**
+     * Checks if a user with the given username is currently logged in.
+     * 
+     * @param username The username to check.
+     * @return true if the user is logged in, false otherwise.
+     */
+    public boolean isUserLoggedIn(String username) {
+        return currentUser != null && currentUser.getUsername().equals(username);
+    }
+
+    /**
      * Finds a user by their username and password.
      * 
      * @param username the username to search for
@@ -129,26 +139,24 @@ public class MusicSystemFacade {
     }
 
     // --- Lesson Methods ---
-
     /**
-     * Adds a lesson to the system.
+     * Adds a new lesson to the system.
      * 
      * @param lessonTitle the title of the lesson
      * @param content the content of the lesson
-     * @param hint a hint or additional information for the lesson
-     * @return true if the lesson was added successfully
+     * @param hint a helpful hint for the lesson
+     * @return {@code true} if the lesson was successfully added
      */
     public boolean addLesson(String lessonTitle, String content, String hint) {
         Lesson lesson = new Lesson(lessonTitle, content, hint);
         lessonList.addLesson(lesson);
         return true;
     }
-
     /**
      * Retrieves a lesson by its title.
      * 
-     * @param lessonTitle the title of the lesson to retrieve
-     * @return the lesson if found, null otherwise
+     * @param lessonTitle the title of the lesson
+     * @return the {@link Lesson} if found, or {@code null} if not found
      */
     public Lesson getLessonByTitle(String lessonTitle) {
         for (Lesson lesson : lessonList.getLessons()) {
@@ -158,12 +166,11 @@ public class MusicSystemFacade {
         }
         return null;
     }
-
     /**
-     * Starts a lesson by its title.
+     * Starts a lesson with the specified title.
      * 
      * @param lessonTitle the title of the lesson to start
-     * @return true if the lesson was started successfully, false if the lesson was not found
+     * @return {@code true} if the lesson starts successfully, {@code false} if the lesson is not found
      */
     public boolean startLesson(String lessonTitle) {
         Lesson lesson = getLessonByTitle(lessonTitle);
@@ -175,11 +182,10 @@ public class MusicSystemFacade {
         }
         return false;
     }
-
     /**
-     * Stops the current lesson.
+     * Stops the currently active lesson.
      * 
-     * @return true if the lesson was stopped successfully, false if no lesson was currently active
+     * @return {@code true} if the lesson was successfully stopped, {@code false} if no lesson was active
      */
     public boolean stopLesson() {
         if (currentLesson != null) {
@@ -189,53 +195,49 @@ public class MusicSystemFacade {
         }
         return false;
     }
-
     /**
-     * Retrieves all lessons in the system.
+     * Retrieves all available lessons.
      * 
-     * @return a list of all lessons
+     * @return a list of all available {@link Lesson} objects
      */
     public List<Lesson> getAllLessons() {
         return lessonList.getLessons();
     }
 
     // --- Song Methods ---
-
     /**
      * Adds a new song to the system.
      * 
      * @param title the title of the song
-     * @param notes the notes of the song
-     * @return true if the song was added successfully
+     * @param notes the notes of the song as an array of strings
+     * @return {@code true} if the song was successfully added
      */
     public boolean addSong(String title, String[] notes) {
         Song song = new Song(title, notes);
         songList.addSong(song);
         return true;
     }
-
     /**
      * Retrieves a song by its title.
      * 
-     * @param title the title of the song to retrieve
-     * @return the song if found, null otherwise
+     * @param title the title of the song
+     * @return the {@link Song} if found, or {@code null} if not found
      */
     public Song getSongByTitle(String title) {
         return songList.getSongByTitle(title);
     }
-
     /**
      * Plays a song by its title.
      * 
      * @param title the title of the song to play
-     * @return true if the song was played successfully, false if the song was not found or could not be played
+     * @return {@code true} if the song was found and played successfully, {@code false} otherwise
      */
     public boolean playSong(String title) {
         Song song = songList.getSongByTitle(title);
         if (song != null && song.getNotes() != null) {
             this.currentSong = song;
             System.out.println("Playing: " + song.getTitle());
-            
+
             String[] notes = song.getNotes().split("\\s+");
             for (String note : notes) {
                 if (!note.trim().isEmpty()) {
@@ -252,11 +254,10 @@ public class MusicSystemFacade {
         }
         return false;
     }
-
     /**
-     * Stops the current song.
+     * Stops the currently playing song.
      * 
-     * @return true if the song was stopped successfully, false if no song was currently playing
+     * @return {@code true} if the song was stopped successfully, {@code false} if no song was playing
      */
     public boolean stopSong() {
         if (currentSong != null) {
@@ -266,20 +267,18 @@ public class MusicSystemFacade {
         }
         return false;
     }
-
     /**
-     * Retrieves all songs in the system.
+     * Retrieves all available songs.
      * 
-     * @return a list of all songs
+     * @return a list of all available {@link Song} objects
      */
     public List<Song> getAllSongs() {
         return songList.getSongs();
     }
-
     /**
-     * Searches for songs by a specific artist.
+     * Searches for songs by a given artist.
      * 
-     * @param artist the artist to search for
+     * @param artist the {@link Artist} whose songs to search for
      * @return a list of songs by the specified artist
      */
     public List<Song> searchSongsByArtist(Artist artist) {
@@ -291,7 +290,6 @@ public class MusicSystemFacade {
                     result.add(song);
                 }
             }
-        
         return result;
     }
 }

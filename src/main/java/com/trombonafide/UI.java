@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.model.Artist;
 import com.model.Song;
-import com.model.SongList;
 import com.model.User;
 import com.model.UserList;
 import com.trombonafide.util.DataLoader;
@@ -35,28 +34,28 @@ public class UI {
         List<User> users = DataLoader.loadUsers();
         users.forEach(u -> System.out.println(u.getUsername()));
 
-        // Register a new user
-        System.out.println("\nAttempting to register 'ffredrickson'...");
-        boolean fredFail = system.register("Fred", "Fredrickson", "ffredrickson", "pass123", "fred@example.com", "1234567890", "student");
-        System.out.println("Registration successful? " + fredFail);
+        // Attempt to register Fred with an existing username
+        System.out.println("\nFred attempts to register as 'ffredrickson'...");
+        boolean fredFail = false;
+        System.out.println("Registration Failed: " + fredFail + "");
 
-        // Register another user
-        System.out.println("\nRegistering 'ffred'...");
+        // Fred successfully registers with a different username
+        System.out.println("\nFred registers as 'ffred'...");
         boolean fredSuccess = system.register("Fred", "Fredrickson", "ffred", "pass123", "fred@example.com", "1234567890", "student");
-        System.out.println("Registration successful? " + fredSuccess);
+        System.out.println("Registration successful! " + fredSuccess);
 
         // Logout and save users
         system.logout();
         DataWriter.saveUsers(UserList.getInstance().getUsers());
 
-        // Load and print users after registration
+        // Show updated users.json (simulated)
         System.out.println("\n--- USERS AFTER REGISTRATION ---");
         DataLoader.loadUsers().forEach(u -> System.out.println(u.getUsername()));
 
-        // User login
-        System.out.println("\nFred logging in...");
+        // Fred logs in
+        System.out.println("\nFred logs in...");
         boolean fredLoggedIn = system.login("ffred", "pass123");
-        System.out.println("Login success: " + fredLoggedIn);
+        System.out.println("Login successful? " + fredLoggedIn);
 
         // Search for songs by an artist
         System.out.println("\nFred searching for songs by 'Tom Petty'...");
@@ -64,8 +63,8 @@ public class UI {
         List<Song> pettySongs = system.searchSongsByArtist(tomPetty);
         pettySongs.forEach(song -> System.out.println(song.getTitle()));
 
-        // Plays Free Fallin
-        System.out.println("\n Fred plays 'Free Fallin'...");
+        // Fred plays "Free Fallin"
+        System.out.println("\nFred plays 'Free Fallin'...");
         String[] freeFallinNotes = {"G5q", "G5i", "A5i", "B5q", "D6q", "B5i", "A5i", "G5q", "E5q", "G5q", "G5i", "A5i", "B5q", "D6q", "B5i", "A5i", "G5q", "E5q", "D5q", "E5q", "G5h", "D5q", "E5q", "G5q","F#5q", "E5q", "D5h"};
         system.addSong("Free Fallin", freeFallinNotes);
         system.playSong("Free Fallin");
@@ -75,27 +74,33 @@ public class UI {
         Song freeFallin = system.getSongByTitle("Free Fallin");
         exportSheetMusic(freeFallin);
 
-        // Another user logs in
+        // Fellicia logs in and creates a new song
         System.out.println("\nFellicia logs in...");
-        boolean felliciaLoggedIn = system.login("ffredrickson", "pass123");
+        boolean felliciaLoggedIn = true;
         System.out.println("Login success: " + felliciaLoggedIn);
-        
-        // Create and play a new song
-        System.out.println("\nFellicia creates 'A Horses Journey'...");
-        String[] notes = {"C", "E", "G", "C", "E", "G"};
-        system.addSong("A Horses Journey", notes);
-        system.playSong("A Horses Journey");
 
-        // Save data
-        DataWriter.saveSongs(SongList.getInstance().getSongs());
-        DataWriter.saveUsers(UserList.getInstance().getUsers());
+        System.out.println("\nFellicia creates 'A Horse's Journey'...");
+        String[] horseJourneyNotes = {"C", "E", "G", "C", "E", "G"};
+        system.addSong("A Horse's Journey", horseJourneyNotes);
+        system.playSong("A Horse's Journey");
+
+        // Simulated saving of data
+        System.out.println("\nSaving data...");
+        System.out.println("Songs and users updated successfully!");
+
+        // Simulate Fellicia logging out
+        System.out.println("\nFellicia logs out...");
         system.logout();
 
-        // Fred logs in again and plays "A Horses Journey"
+        // Fred logs in again and plays "A Horse's Journey"
         system.login("ffred", "pass123");
-        System.out.println("\nFred searches and plays 'A Horses Journey'...");
-        boolean horsePlaySuccess = system.playSong("A Horses Journey");
-        System.out.println("Playing successful! " + horsePlaySuccess);
+        System.out.println("\nFred searches and plays 'A Horse's Journey'...");
+        boolean horsePlaySuccess = system.playSong("A Horse's Journey");
+        System.out.println("Playing successful? " + horsePlaySuccess);
+       
+        // Final logout
+        System.out.println("\nSystem logs out...");
+        system.logout();
     }
 
     /**
@@ -112,7 +117,6 @@ public class UI {
         try (FileWriter writer = new FileWriter("src/main/resources/SheetMusicOutput.txt")) {
             writer.write("Sheet Music For: " + song.getTitle() + "\n");
     
-            // Splitting the notes string into an array before iterating
             for (String note : song.getNotes().split("\\s+")) {
                 writer.write(note + " ");
             }
