@@ -82,6 +82,20 @@ public class UI {
         System.out.println("\nFellicia creates 'A Horse's Journey'...");
         String[] horseJourneyNotes = {"C", "E", "G", "C", "E", "G"};
         system.addSong("A Horse's Journey", horseJourneyNotes);
+        Artist artist = new Artist("Fellicia", "Fredrickson", "classic");
+
+        Song horseJourney = new Song(
+        "A Horse's Journey",   
+        artist,         
+        "classic",         
+        String.join(", ", horseJourneyNotes),  
+        1,                     
+        1.0                    
+);
+
+// ✅ Save ONLY 'A Horse's Journey' to songs.json
+        List<Song> horseJourneyList = List.of(horseJourney);
+        DataWriter.saveSongs(horseJourneyList);
         system.playSong("A Horse's Journey");
 
         // Simulated saving of data
