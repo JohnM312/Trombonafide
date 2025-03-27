@@ -5,6 +5,8 @@ public class Artist {
     private String lastName;
     private String genre;
 
+    public Artist() {}
+
     public Artist(String firstName, String lastName, String genre) {
         this.firstName = firstName;
         this.lastName = lastName;
