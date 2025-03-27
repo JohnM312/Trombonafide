@@ -2,7 +2,9 @@ package com.model;
 
 import java.io.Serializable;
 import java.util.UUID;
-
+/**
+ * test if the branch was right
+ */
 public class Song implements Serializable {
     private UUID uuid;
     private String title;

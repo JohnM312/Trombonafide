@@ -1,14 +1,15 @@
 package com.trombonafide;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.model.Artist;
 import com.model.Lesson;
 import com.model.LessonList;
 import com.model.Song;
 import com.model.SongList;
 import com.model.User;
 import com.model.UserList;
-import com.model.Artist;
-import java.util.List;
-import java.util.ArrayList;
 import com.trombonafide.util.MusicPlayer;
 
 
@@ -38,7 +39,7 @@ public class MusicSystemFacade {
                         String password, String email, String phoneNumber, String type) {
         if (findUser(username, password) == null) {
             User newUser = new User(firstName, lastName, username,
-                                password, email, phoneNumber, type);
+                                password, email);
             UserList.getInstance().addUser(newUser);
             this.currentUser = newUser;
             return true;
@@ -139,11 +140,13 @@ public class MusicSystemFacade {
     public List<Song> searchSongsByArtist(Artist artist) {
         List<Song> result = new ArrayList<>();
         for (Song song : SongList.getInstance().getSongs()) {
-            if (song.getArtist().getFullName().equalsIgnoreCase
-            (artist.getFullName())) {
-                result.add(song);
+            Artist songArtist = song.getArtist();
+            if (songArtist.getFirstName().equalsIgnoreCase(artist.getFirstName()) &&
+            songArtist.getLastName().equalsIgnoreCase(artist.getLastName())) {
+                    result.add(song);
+                }
             }
-        }
+        
         return result;
     }
 }

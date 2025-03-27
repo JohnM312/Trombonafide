@@ -1,19 +1,13 @@
 [ {
-  "uuid" : "6beda097-538a-4b0c-923a-3c27704126a2",
-  "title" : "C Scale",
-  "artist" : "None",
-  "genre" : "Scale",
-  "notes" : "Ch Dh Eh Fh Gh Ah Bh C6h"
-}, {
-  "uuid" : "e252b491-c0d3-4e03-97b8-bbd9b230f3f5",
-  "title" : "Random Nonsense",
-  "artist" : "Trent",
-  "genre" : "Bababooey",
-  "notes" : "Ch Aw Bq Dq C6h Dh Aw"
-}, {
-  "uuid" : "198a4db5-4d7e-49d6-91dd-adbd4d1dbbc7",
-  "title" : "test",
-  "artist" : "test",
-  "genre" : "test",
-  "notes" : "A B C D E F"
+  "uuid" : "33440001-c6f7-497e-a242-bbc71730855a",
+  "title" : "free fallin",
+  "artist" : {
+    "firstName" : "tom",
+    "lastName" : "petty",
+    "genre" : "rock"
+  },
+  "genre" : "rock",
+  "notes" : "free falling yeah yeah",
+  "difficultyRate" : 2,
+  "melodyStructure" : 1.0
 } ]
