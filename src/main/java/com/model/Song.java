@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * Represents a song with various details like artist, genre, difficulty, and more.
+ * Represents a song with various details.
  */
 public class Song implements Serializable {
     private UUID uuid;
@@ -14,10 +14,10 @@ public class Song implements Serializable {
     private String notes;
     private int difficultyRate;
     private double melodyStructure;
+    private String userId; // Added userId
 
     /**
      * Default constructor.
-     * Automatically generates a unique ID.
      */
     public Song() {
         this.uuid = UUID.randomUUID();
@@ -25,13 +25,6 @@ public class Song implements Serializable {
 
     /**
      * Full constructor for setting all the fields.
-     *
-     * @param title Title of the song
-     * @param artist Artist who made the song
-     * @param genre Genre of the song
-     * @param notes Notes related to the song
-     * @param difficultyRate A number rating how hard the song is
-     * @param melodyStructure A value representing the structure of the melody
      */
     public Song(String title, Artist artist, String genre, String notes,
                 int difficultyRate, double melodyStructure) {
@@ -46,10 +39,6 @@ public class Song implements Serializable {
 
     /**
      * Simplified constructor that takes a title and an array of notes.
-     * Fills in default values for everything else.
-     *
-     * @param title Title of the song
-     * @param notes Array of musical notes
      */
     public Song(String title, String[] notes) {
         this.uuid = UUID.randomUUID();
@@ -83,10 +72,11 @@ public class Song implements Serializable {
     public double getMelodyStructure() { return melodyStructure; }
     public void setMelodyStructure(double melodyStructure) { this.melodyStructure = melodyStructure; }
 
+    public String getUserId() { return userId; }
+    public void setUserId(String userId) { this.userId = userId; } // Setter for userId
+
     /**
      * Returns a quick summary of the song and its key details.
-     *
-     * @return formatted string of song details
      */
     @Override
     public String toString() {
@@ -96,6 +86,7 @@ public class Song implements Serializable {
                 ", artist='" + artist + '\'' +
                 ", genre='" + genre + '\'' +
                 ", notes='" + notes + '\'' +
+                ", userId='" + userId + '\'' + // Add userId to toString()
                 '}';
     }
 }

@@ -9,4 +9,26 @@
     "completedLessons" : [ ],
     "totalPoints" : 0
   }
+}, {
+  "uuid" : "e1716e30-c534-4b5c-94fb-2ea728a22d10",
+  "firstName" : "Fred",
+  "lastName" : "Fredrickson",
+  "username" : "ffred",
+  "password" : "pass123",
+  "email" : "fred@example.com",
+  "progress" : {
+    "completedLessons" : [ ],
+    "totalPoints" : 0
+  }
+}, {
+  "uuid" : "56bfd87e-c4fb-42f4-9c37-79c21ecbf1d4",
+  "firstName" : "Fred",
+  "lastName" : "Fredrickson",
+  "username" : "ffred",
+  "password" : "pass123",
+  "email" : "fred@example.com",
+  "progress" : {
+    "completedLessons" : [ ],
+    "totalPoints" : 0
+  }
 } ]
