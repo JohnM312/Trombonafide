@@ -1,1 +1,12 @@
-[ ]
+[ {
+  "uuid" : "f9bccfe9-67a8-428e-b94f-7dc1db967512",
+  "firstName" : "Felicia",
+  "lastName" : "Fredrickson",
+  "username" : "ffredrickson",
+  "password" : "pass123",
+  "email" : "felicia@example.com",
+  "progress" : {
+    "completedLessons" : [ ],
+    "totalPoints" : 0
+  }
+} ]
