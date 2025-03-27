@@ -3,7 +3,7 @@
   "firstName" : "Felicia",
   "lastName" : "Fredrickson",
   "username" : "ffredrickson",
-  "password" : "pass123",
+  "password" : "strongPassword123",
   "email" : "felicia@example.com",
   "progress" : {
     "completedLessons" : [ ],
