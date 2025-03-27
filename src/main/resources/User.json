@@ -1,65 +1,21 @@
 [ {
-  "uuid" : "6f3d1823-dd16-4f73-bf65-584888862f47",
-  "firstName" : null,
-  "lastName" : null,
-  "username" : "trentp2003",
-  "password" : "ilovecheese123!",
-  "email" : "biggiecheese105@gmail.com",
+  "uuid" : "f3fcd4c2-cf68-4fce-be4f-c2253365f55d",
+  "firstName" : "Fred",
+  "lastName" : "Fredrickson",
+  "username" : "ffredrickson",
+  "password" : "pass123",
+  "email" : "fred@example.com",
   "progress" : {
     "completedLessons" : [ ],
     "totalPoints" : 0
   }
 }, {
-  "uuid" : "3ee3a76e-51c7-4e3b-abd1-c23f38966d6d",
-  "firstName" : null,
-  "lastName" : null,
-  "username" : "john_mai",
-  "password" : "gokusolos!!!",
-  "email" : "dragonballjohn@yahoo.com",
-  "progress" : {
-    "completedLessons" : [ ],
-    "totalPoints" : 0
-  }
-}, {
-  "uuid" : "faba0292-378b-4ea9-8345-1aa703ce0837",
-  "firstName" : null,
-  "lastName" : null,
-  "username" : "testuser",
-  "password" : "lasdf",
-  "email" : "testuser@yahoo.com",
-  "progress" : {
-    "completedLessons" : [ ],
-    "totalPoints" : 0
-  }
-}, {
-  "uuid" : "ad41d780-eed1-4d9a-8030-e2e0c7802f8f",
-  "firstName" : null,
-  "lastName" : null,
-  "username" : "test user",
-  "password" : "test",
-  "email" : "tester@gmail.com",
-  "progress" : {
-    "completedLessons" : [ ],
-    "totalPoints" : 0
-  }
-}, {
-  "uuid" : "b240c97f-c0a6-4562-a865-68fb0d4d7148",
-  "firstName" : null,
-  "lastName" : null,
-  "username" : "alim",
-  "password" : "alim101",
-  "email" : "alim@example.com",
-  "progress" : {
-    "completedLessons" : [ ],
-    "totalPoints" : 0
-  }
-}, {
-  "uuid" : "7b4be671-94f8-43ca-a065-61f3958ab60c",
-  "firstName" : null,
-  "lastName" : null,
-  "username" : "alim",
-  "password" : "alim10",
-  "email" : "alim@example.com",
+  "uuid" : "90ce0ed6-5cc1-4de5-9b38-9dae557ebaf2",
+  "firstName" : "Fred",
+  "lastName" : "Fredrickson",
+  "username" : "ffred",
+  "password" : "pass123",
+  "email" : "fred@example.com",
   "progress" : {
     "completedLessons" : [ ],
     "totalPoints" : 0
