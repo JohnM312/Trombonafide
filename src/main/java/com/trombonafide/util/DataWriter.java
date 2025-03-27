@@ -10,10 +10,27 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * This class provides static methods to persist application data
+ * such as {@link User}, {@link Song}, and {@link Lesson} objects into JSON files
+ * using the Jackson library.
+ * 
+ * Files are defined by constants in the {@link Constants} class.
+ * 
+ * @author Andrew Lim
+ */
 public class DataWriter {
+    /** 
+     * Jackson ObjectMapper for serializing and deserializing JSON content. 
+     * 
+     */
     private static final ObjectMapper objectMapper = new ObjectMapper();
-
+    /**
+     * Saves a list of new users to the user JSON file. If the file already exists,
+     * the existing users are preserved and new users are appended.
+     *
+     * @param newUsers the list of new {@link User} objects to be saved
+     */
     public static void saveUsers(List<User> newUsers) {
         try {
             File file = new File(Constants.USER_FILE);
@@ -30,7 +47,12 @@ public class DataWriter {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Saves a list of new songs to the song JSON file. If the file already exists,
+     * existing songs are retained and the new ones are appended.
+     *
+     * @param newSongs the list of new {@link Song} objects to be saved
+     */
     public static void saveSongs(List<Song> newSongs) {
         try {
             File file = new File(Constants.SONG_FILE);
@@ -47,7 +69,12 @@ public class DataWriter {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Saves a list of new lessons to the lesson JSON file. If the file already exists,
+     * existing lessons are preserved and new ones are appended.
+     *
+     * @param newLessons the list of new {@link Lesson} objects to be saved
+     */
     public static void saveLessons(List<Lesson> newLessons) {
         try {
             File file = new File(Constants.LESSON_FILE);
