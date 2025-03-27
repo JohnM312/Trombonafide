@@ -1,5 +1,3 @@
-package com.trombonafide;
-
 import java.util.List;
 
 /**
@@ -24,12 +22,31 @@ public class KeySignature {
     }
 
     /**
+     * Gets the list of accidentals in the key signature.
+     *
+     * @return the list of accidentals
+     */
+    public List<String> getAccidentals() {
+        return accidentals;
+    }
+
+    /**
+     * Gets the key of the key signature.
+     *
+     * @return the key as a string
+     */
+    public String getKey() {
+        return key;
+    }
+
+    /**
      * Transposes the key signature by a given interval.
      *
      * @param interval the interval by which to transpose
      */
     public void transpose(int interval) {
-        // Transpose key signature
+        // Example: Use accidentals in transposition logic
+        System.out.println("Transposing key: " + key + " by " + interval + " steps.");
     }
 
     /**
@@ -38,6 +55,6 @@ public class KeySignature {
      * @return the relative minor key as a string
      */
     public String getRelativeMinor() {
-        return "";
+        return key + " Minor"; // Example logic
     }
 }
