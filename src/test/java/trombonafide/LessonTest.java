@@ -28,7 +28,7 @@ public class LessonTest {
     public void testToStringOutput() {
         String output = lesson.toString();
         assertTrue(output.contains("Intro to Music"));
-        assertTrue(output.contains("content=21 chars"));
+        assertTrue(output.contains("content=21 chars")); //error on this test
         assertTrue(output.contains("clapping the rhythm".substring(0, 20)));
     }
 
