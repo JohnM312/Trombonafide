@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Unit tests for the {@link DataLoader} class.
+ * Unit tests for the data loader class
  * These tests validate the functionality of loading Users, Songs, and Lessons
  * from JSON files, including tests for valid data, corrupted files, empty files,
  * missing files, and partial/null data entries.
@@ -58,7 +58,7 @@ public class DataLoaderTest {
     }
 
     /**
-     * Tests that loading from a non-existent user file returns an empty list.
+     * Tests that loading from a non-existent user file returns the correct output of an empty list.
      */
     @Test
     public void testLoadUsersFromMissingFile() {
@@ -68,7 +68,7 @@ public class DataLoaderTest {
     }
 
     /**
-     * Tests that loading from an empty user file returns an empty list.
+     * Tests that loading from an empty user file returns the correct output of an empty list.
      */
     @Test
     public void testLoadUsersFromEmptyFile() throws IOException {
@@ -110,7 +110,7 @@ public class DataLoaderTest {
     }
 
     /**
-     * Tests that loading from a missing song file returns an empty list.
+     * Tests that loading from a missing song file returns the correct output of an empty list.
      */
     @Test
     public void testLoadSongsFromMissingFile() {
@@ -120,7 +120,7 @@ public class DataLoaderTest {
     }
 
     /**
-     * Tests that loading from an empty song file returns an empty list.
+     * Tests that loading from an empty song file returns the correct output of an empty list.
      */
     @Test
     public void testLoadSongsFromEmptyFile() throws IOException {
@@ -132,7 +132,7 @@ public class DataLoaderTest {
 
 
     /**
-     * Tests that a song with a null artist field can still be loaded.
+     * Tests that a song with a null artist field can still be loaded and handled correctly.
      */
     @Test
     public void testLoadSongsWithNullArtist() throws IOException {
@@ -164,7 +164,7 @@ public class DataLoaderTest {
     }
 
     /**
-     * Tests that loading from a missing lesson file returns an empty list.
+     * Tests that loading from a missing lesson file returns the correct output of an empty list.
      */
     @Test
     public void testLoadLessonsFromMissingFile() {
@@ -174,7 +174,7 @@ public class DataLoaderTest {
     }
 
     /**
-     * Tests that loading from an empty lesson file does not throw and returns an empty list.
+     * Tests that loading from an empty lesson file returns an empty list properly
      */
     @Test
     public void testLoadLessonsFromEmptyFile() throws IOException {
