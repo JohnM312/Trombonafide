@@ -1,4 +1,4 @@
-package com.trombonafide;
+package trombonafide;
 
 import org.junit.Test;
 
