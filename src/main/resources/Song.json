@@ -1,1 +1,14 @@
-[ ]
+[ {
+  "uuid" : "d1dbd258-8590-4007-8c20-390f39aac633",
+  "title" : "Cool Tune",
+  "artist" : {
+    "firstName" : "John",
+    "lastName" : "Doe",
+    "genre" : "Jazz"
+  },
+  "genre" : "Jazz",
+  "notes" : "C, D",
+  "difficultyRate" : 3,
+  "melodyStructure" : 2.5,
+  "userId" : null
+} ]
