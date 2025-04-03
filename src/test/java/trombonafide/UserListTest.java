@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Tests for the UserList class to verify user management and singleton behavior.
+ * @author Julio Amezcua
  */
 public class UserListTest {
 

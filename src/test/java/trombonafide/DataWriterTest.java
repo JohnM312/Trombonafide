@@ -18,6 +18,7 @@ import java.util.List;
  * These tests verify that Users, Songs, and Lessons are correctly written
  * including edge cases such as null values, empty fields,
  * and extreme input values.
+ * @author Aiden Campbell
  */
 public class DataWriterTest {
     private List<User> userList;

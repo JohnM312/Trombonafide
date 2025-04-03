@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 import com.trombonafide.KeySignature;
 
+/**
+ * @author John Mai
+ */
 public class KeySignatureTest {
 
     @Test

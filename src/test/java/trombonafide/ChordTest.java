@@ -9,6 +9,9 @@ import java.util.List;
 import com.trombonafide.Chord;
 import com.trombonafide.Note;
 
+/**
+ * @author John Mai
+ */
 public class ChordTest {
 
     @Test

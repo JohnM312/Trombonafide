@@ -8,6 +8,9 @@ import com.model.Lesson;
 
 import java.util.UUID;
 
+/**
+ * @author Aiden Campbell
+ */
 public class LessonTest {
     private Lesson lesson;
 

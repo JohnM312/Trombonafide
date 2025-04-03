@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 import com.trombonafide.*;
 
+/**
+ * @author Trent Petersen
+ */
 public class MusicTest {
 
     @Test

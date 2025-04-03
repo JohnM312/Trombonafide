@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 
 /**
  * Tests the UserProgress class for lesson tracking and point updates.
+ * @author Julio Amezcua
  */
 public class UserProgressTest {
 
