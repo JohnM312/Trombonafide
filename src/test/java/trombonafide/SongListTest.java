@@ -1,4 +1,4 @@
-package com.trombonafide;
+package trombonafide;
 
 import com.model.Song;
 import com.model.Artist;
@@ -93,3 +93,4 @@ public class SongListTest {
         assertNotNull(songList.toString());
     }
 }
+
