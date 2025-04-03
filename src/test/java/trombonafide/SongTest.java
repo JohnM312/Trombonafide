@@ -9,6 +9,10 @@ import org.junit.Test;
 
 import java.util.UUID;
 
+/**
+ * @author Aiden Campbell
+ * @author Andrew Lim
+ */
 public class SongTest {
 
 

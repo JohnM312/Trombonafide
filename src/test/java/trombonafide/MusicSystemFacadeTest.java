@@ -12,6 +12,10 @@ import com.trombonafide.*;
 
 import java.util.List;
 
+/**
+ * @author Trent Petersen
+ * @author Andrew Lim
+ */
 public class MusicSystemFacadeTest {
     private MusicSystemFacade facade;
 

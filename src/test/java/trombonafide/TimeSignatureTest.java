@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 import com.trombonafide.TimeSignature;
 
+/**
+ * @author John Mai
+ */
 public class TimeSignatureTest {
 
     @Test

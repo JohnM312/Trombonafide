@@ -12,6 +12,9 @@ import com.trombonafide.Note;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author John Mai
+ */
 public class SheetMusicTest {
 
     @Test

@@ -10,6 +10,9 @@ import java.util.List;
 import com.trombonafide.Measure;
 import com.trombonafide.Note;
 
+/**
+ * @author John Mai
+ */
 public class MeasureTest { 
 
     @Test

@@ -9,6 +9,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author Andrew Lim
+ * @author Aiden Campbell
+ */
 public class LessonListTest {
     private LessonList lessonList;
 

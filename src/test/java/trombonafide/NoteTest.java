@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 
 import com.trombonafide.Note;
 
+/**
+ * @author John Mai
+ */
 public class NoteTest {
 
     @Test

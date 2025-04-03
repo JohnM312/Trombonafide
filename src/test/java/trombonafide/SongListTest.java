@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 /**
  * Tests the SongList class to make sure songs are managed correctly
  * uses singleton pattern.
+ * @author Julio Amezcua
  */
 public class SongListTest {
 

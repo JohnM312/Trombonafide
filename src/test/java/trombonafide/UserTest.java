@@ -10,7 +10,8 @@ import com.model.User;
 import com.model.UserProgress;
 
 /**
- * Test class for the User model class.
+ * @author Trent Petersen
+ * @author Aiden Campbell
  */
 public class UserTest {
     private User user;

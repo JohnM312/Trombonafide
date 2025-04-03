@@ -21,6 +21,7 @@ import java.util.List;
  * These tests validate the functionality of loading Users, Songs, and Lessons
  * from JSON files, including tests for valid data, corrupted files, empty files,
  * missing files, and partial/null data entries.
+ * @author Aiden Campbell
  */
 public class DataLoaderTest {
     private List<User> userList;

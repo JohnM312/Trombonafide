@@ -8,6 +8,7 @@ import com.model.Artist;
 
 /**
  * Tests for the Artist class to verify data handling and formatting.
+ * @author Julio Amezcua
  */
 public class ArtistTest {
 
