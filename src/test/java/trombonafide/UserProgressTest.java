@@ -1,4 +1,4 @@
-package com.trombonafide;
+package trombonafide;
 
 import com.model.UserProgress;
 
@@ -76,3 +76,4 @@ public class UserProgressTest {
         assertTrue(output.contains("totalPoints=50"));
     }
 }
+
