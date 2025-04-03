@@ -3,11 +3,12 @@ package com.trombonafide;
 import java.util.List;
 
 /**
- * Represents a sheet of music, containing information about title, composer, tempo, 
+ * Represents a sheet of music, containing information about title, composer, tempo,
  * key signature, time signature, and measures.
- * 
+ *
  * @author John Mai
  */
+@SuppressWarnings("unused")
 public class SheetMusic {
     private String title;
     private String composer;

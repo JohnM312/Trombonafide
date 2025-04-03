@@ -1,53 +1,49 @@
 package com.trombonafide;
 
-/**
- * Represents a musical note with pitch, octave, duration, and velocity.
- * 
- * @author John Mai
- */
 public class Note {
     private String pitch;
-    private int octave;
-    private float duration;
-    private int velocity;
+    private double duration;
+    private int octave; // Added octave
+    private int velocity; // Added velocity
 
-    /**
-     * Constructs a new Note instance.
-     *
-     * @param pitch the pitch of the note (e.g., "C#", "A")
-     * @param octave the octave in which the note is played
-     * @param duration the duration of the note in beats
-     * @param velocity the velocity (intensity) of the note
-     */
-    public Note(String pitch, int octave, float duration, int velocity) {
+    public Note(String pitch, double duration) {
+        this.pitch = pitch;
+        this.duration = duration;
+    }
+
+    public Note(String pitch, int octave, double duration, int velocity) {
         this.pitch = pitch;
         this.octave = octave;
         this.duration = duration;
         this.velocity = velocity;
     }
 
-    /**
-     * Plays the note.
-     */
-    public void play() {
-        // Play the note
+    public String getPitch() {
+        return pitch;
     }
 
-    /**
-     * Transposes the note by a given interval.
-     *
-     * @param interval the interval by which to transpose the note
-     */
+    public double getDuration() {
+        return duration;
+    }
+
     public void transpose(int interval) {
-        // Adjust pitch by interval
-    }
+        // This is a VERY basic implementation.  It only shifts the pitch name, and may not be musically correct.
+        String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+        for (int i = 0; i < notes.length; i++) {
+            if (pitch.startsWith(notes[i])) {  //If the note pitch begins with the notes at this index.
+                int newIndex = (i + interval) % notes.length;
+                if (newIndex < 0) {
+                    newIndex += notes.length;  // Handle negative indices
+                }
 
-    /**
-     * Gets the frequency of the note.
-     *
-     * @return the frequency in Hz
-     */
-    public float getFrequency() {
-        return 0;
+                String newPitch = notes[newIndex];
+                // If the note has an octave number, preserve it.
+                if (pitch.length() > notes[i].length()) {
+                    newPitch += pitch.substring(notes[i].length());
+                }
+                pitch = newPitch;
+                break;
+            }
+        }
     }
 }

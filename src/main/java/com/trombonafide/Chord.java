@@ -4,9 +4,9 @@ import java.util.List;
 
 /**
  * Represents a musical chord, consisting of multiple notes played together.
- * 
  * @author John Mai
  */
+@SuppressWarnings("unused")
 public class Chord {
     private String name;
     private List<Note> notes;
@@ -15,7 +15,6 @@ public class Chord {
 
     /**
      * Constructs a new Chord instance.
-     *
      * @param name the name of the chord
      * @param notes the list of notes forming the chord
      * @param quality the chord quality (e.g., major, minor)
@@ -37,7 +36,6 @@ public class Chord {
 
     /**
      * Transposes the chord by a given interval.
-     *
      * @param interval the interval by which to transpose the chord
      */
     public void transpose(int interval) {
@@ -48,7 +46,6 @@ public class Chord {
 
     /**
      * Gets the list of notes forming the chord.
-     *
      * @return the list of notes
      */
     public List<Note> getNotes() {
