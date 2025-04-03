@@ -8,6 +8,7 @@ module com.trombonafide {
     requires jfugue;
     requires com.fasterxml.jackson.databind;
 
+    requires junit; 
     opens com.trombonafide to javafx.fxml;
     exports com.trombonafide;
     exports com.trombonafide.util;
