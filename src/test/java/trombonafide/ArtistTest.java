@@ -42,4 +42,24 @@ public class ArtistTest {
         String expected = "Artist{firstName='Ella', lastName='Fitzgerald', genre='Swing'}";
         assertEquals(expected, artist.toString());
     }
+
+    /**
+     * Tests the toString output when things are null.
+     */
+    @Test
+    public void testToStringWithNulls() {
+        Artist artist = new Artist();
+        String expected = "Artist{firstName='null', lastName='null', genre='null'}";
+        assertEquals(expected, artist.toString());
+    }
+
+    /**
+     * Tests the toString output when its empty strings.
+     */
+    @Test
+    public void testToStringWithEmptyFields() {
+        Artist artist = new Artist("", "", "");
+        String expected = "Artist{firstName='', lastName='', genre=''}";
+        assertEquals(expected, artist.toString());
+    }
 }
