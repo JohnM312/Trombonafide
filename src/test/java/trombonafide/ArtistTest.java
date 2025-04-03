@@ -1,8 +1,10 @@
-package com.trombonafide;
+package trombonafide;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import org.junit.Test;
 
 import com.model.Artist;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  * Tests for the Artist class to verify data handling and formatting.
