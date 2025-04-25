@@ -3,11 +3,13 @@ package com.trombonafide.util;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.model.User;
+import com.model.UserList;
 import com.model.Song;
 import com.model.Lesson;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,14 +35,28 @@ public class DataLoader {
      */
     public static List<User> loadUsers() {
         try {
-            File file = new File(Constants.USER_FILE);
-            if (!file.exists()) return new ArrayList<>();
-            return objectMapper.readValue(file, new TypeReference<List<User>>() {});
+            InputStream inputStream = DataLoader.class.getClassLoader().getResourceAsStream("User.json");
+    
+            if (inputStream == null) {
+                System.out.println("User.json not found in resources!");
+                return new ArrayList<>();
+            }
+    
+            List<User> users = objectMapper.readValue(inputStream, new TypeReference<List<User>>() {});
+            System.out.println("Loaded users: " + users.size());
+            return users;
+    
+        } catch (com.fasterxml.jackson.databind.JsonMappingException mappingError) {
+            System.out.println("JSON mapping error: " + mappingError.getMessage());
+            mappingError.printStackTrace();
+            return new ArrayList<>();
         } catch (IOException e) {
             e.printStackTrace();
             return new ArrayList<>();
         }
     }
+    
+
     /**
      * Loads a list of songs from the song JSON file.
      * 
@@ -71,4 +87,14 @@ public class DataLoader {
             return new ArrayList<>();
         }
     }
+
+    /**
+     * Loads users from JSON and populates the shared UserList instance.
+     */
+    public static void populateUserList() {
+        List<User> users = loadUsers();
+        UserList.getInstance().getUsers().addAll(users);
+        System.out.println("Loaded users: " + users.size());
+    }
+    
 }

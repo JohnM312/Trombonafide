@@ -1,1 +1,32 @@
-[ ]
+[
+    {
+      "uuid": "f1a2b3c4-d5e6-7890-1abc-def012345678",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "username": "asmith",
+      "email": "alice.smith@example.com",
+      "password": "securePassword123",
+      "progress": {
+          "completedLessons": [
+            "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+            "bcdef012-3456-789a-bcde-f0123456789a"
+          ],
+          "totalPoints": 100
+        }
+    },
+    {
+      "uuid": "12345abc-6789-0def-1abc-def012345678",
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "username": "bjohnson",
+      "email": "bob.johnson@example.com",
+      "password": "anotherStrongPassword",
+      "progress": {
+          "completedLessons": [
+            "def12345-6789-abcd-ef01-23456789abcd"
+          ],
+          "totalPoints": 75
+        }
+    }
+  ]
+  

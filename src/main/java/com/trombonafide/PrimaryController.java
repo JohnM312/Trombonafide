@@ -3,22 +3,32 @@ package com.trombonafide;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
-/**
- * this class manages the user interaction for the primary view 
- * in the Trombonafide JavaFX application. it allows the switch from primary scene to the secondary scene
- * 
- * @author Andrew Lim
- */
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.Label;
+
 public class PrimaryController {
 
-    /**
-     * Handles the UI action to switch from primary view to secondary view 
-     * This method is called when the user interacts with the designatied UI control
-     * 
-     * @throws IOException if the secondary FXML file cannot be loaded
-     */
     @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+    private TextField usernameField;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private Label errorLabel;
+
+    private final MusicSystemFacade musicSystem = MusicSystemFacade.getFacadeInstance();
+
+    @FXML
+    private void handleLogin() throws IOException {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
+        if (musicSystem.login(username, password)) {
+            App.setRoot("secondary");
+        } else {
+            errorLabel.setText("Invalid username or password.");
+        }
     }
 }
