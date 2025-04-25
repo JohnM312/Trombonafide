@@ -254,6 +254,24 @@ public class MusicSystemFacade {
         }
         return false;
     }
+
+/**
+ * Plays a Song object directly
+ */
+public boolean playSong(Song song) {
+    if (song != null) {
+        this.currentSong = song;
+        return playSong(song.getTitle());
+    }
+    return false;
+}
+
+/**
+ * Adds a Song object to the system
+ */
+public void addSong(Song song) {
+    songList.addSong(song);
+}
     /**
      * Stops the currently playing song.
      * 

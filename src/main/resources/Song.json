@@ -1,1 +1,28 @@
-[ ]
+[
+    {
+      "title": "Mary Had a Little Lamb",
+      "artist": {
+        "firstName": "Traditional",
+        "lastName": "Nursery Rhyme",
+        "genre": "Children's"
+      },
+      "genre": "Nursery Rhyme",
+      "notes": "E D C D E E E D D D E G G",
+      "difficultyRate": 1,
+      "melodyStructure": 1.0,
+      "userId": "system"
+    },
+    {
+      "title": "Ode to Joy",
+      "artist": {
+        "firstName": "Ludwig van",
+        "lastName": "Beethoven",
+        "genre": "Classical"
+      },
+      "genre": "Classical",
+      "notes": "E E F G G F E D C C D E E D D",
+      "difficultyRate": 3,
+      "melodyStructure": 1.5,
+      "userId": "system"
+    }
+  ]

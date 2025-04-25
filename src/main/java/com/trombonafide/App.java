@@ -1,8 +1,15 @@
 package com.trombonafide;
 
-import java.io.IOException;
+import com.trombonafide.util.DataLoader;
 
-import com.trombonafide.util.DataLoader; // <-- Make sure this is the correct package
+import java.io.IOException;
+import java.io.InputStream;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.model.Song;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +23,11 @@ import javafx.stage.Stage;
  * 
  * Extends {@link javafx.application.Application}
  * 
- * @author Andrew Lim and Aiden Campbell
+ * @author Andrew Lim, Aiden Campbell, and Trent Petersen
  */
 public class App extends Application {
+    private static final Logger LOGGER = Logger.getLogger(App.class.getName());
+    
     /**
      * The main JavaFX scene used throughout the application.
      */
@@ -32,13 +41,41 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        // Load user data from JSON before showing the login screen
+        /**
+         * Load user data before showing the login screen
+         */
         DataLoader.populateUserList();
+        
+        /**
+         * Try to load songs (but don't fail if JSON isn't found)
+         */
+        try {
+            loadSongsFromJson();
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Could not load songs from JSON", e);
+        }
 
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.setTitle("Trombonafide - Login");
         stage.show();
+    }
+
+    /**
+     * Loads songs from the Song.json file into the system.
+     */
+    private void loadSongsFromJson() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        try (InputStream is = getClass().getResourceAsStream("/Song.json")) {
+            if (is != null) {
+                List<Song> songs = mapper.readValue(is, new TypeReference<List<Song>>() {});
+                MusicSystemFacade facade = MusicSystemFacade.getFacadeInstance();
+                songs.forEach(facade::addSong);
+                LOGGER.info("Loaded " + songs.size() + " songs from JSON");
+            } else {
+                LOGGER.warning("Song.json file not found in resources");
+            }
+        }
     }
 
     /**
