@@ -13,19 +13,33 @@ import java.io.IOException;
 
 /**
  * Controller for the Song Library view that displays available songs and handles playback.
+ * @author Trent Petersen
  */
 public class LibraryController {
+    /** TableView displaying the list of available songs */
     @FXML private TableView<Song> songsTable;
+    
+    /** Column displaying song titles */
     @FXML private TableColumn<Song, String> titleColumn;
+    
+    /** Column displaying artist names (first + last name) */ 
     @FXML private TableColumn<Song, String> artistColumn;
+    
+    /** Column displaying song genres */
     @FXML private TableColumn<Song, String> genreColumn;
+    
+    /** Column displaying difficulty ratings */
     @FXML private TableColumn<Song, Integer> difficultyColumn;
     
     private final MusicSystemFacade musicSystem = MusicSystemFacade.getFacadeInstance();
     
+    /** 
+     * Initializes the controller after FXML loading completes.
+     * Configures table columns, loads songs, and sets up sorting.
+     */
     @FXML
     public void initialize() {
-        // Configure table columns
+        /** Configure table columns */
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         artistColumn.setCellValueFactory(cellData -> 
             new SimpleStringProperty(
@@ -35,10 +49,10 @@ public class LibraryController {
         genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
         difficultyColumn.setCellValueFactory(new PropertyValueFactory<>("difficultyRate"));
         
-        // Load songs
+        /** Load songs */
         songsTable.setItems(FXCollections.observableArrayList(musicSystem.getAllSongs()));
         
-        // Enable sorting with proper listener
+        /** Enable sorting with proper listener */
         songsTable.getSortOrder().addListener((ListChangeListener<TableColumn<Song, ?>>) change -> {
             while (change.next()) {
                 if (change.wasAdded() || change.wasRemoved() || change.wasPermutated()) {
@@ -48,6 +62,9 @@ public class LibraryController {
         });
     }
     
+    /**
+     * Sorts the songs table based on the currently selected column.
+     */
     private void sortTable() {
         if (!songsTable.getSortOrder().isEmpty()) {
             TableColumn<Song, ?> sortColumn = songsTable.getSortOrder().get(0);
@@ -56,6 +73,11 @@ public class LibraryController {
         }
     }
     
+    /**
+     * Creates a comparator for sorting based on the specified column.
+     * @param column The table column to sort by
+     * @return Comparator for the specified column type
+     */
     private Comparator<Song> createComparator(TableColumn<Song, ?> column) {
         return (song1, song2) -> {
             if (column == titleColumn) {
@@ -73,12 +95,21 @@ public class LibraryController {
         };
     }
     
+    /**
+     * Handles navigation back to the previous view.
+     * Stops any currently playing song before transitioning.
+     * @throws IOException if the FXML file cannot be loaded
+     */
     @FXML
     private void handleBack() throws IOException {
         musicSystem.stopSong();
         App.setRoot("secondary");
     }
     
+    /**
+     * Handles playback of the selected song.
+     * Starts playback in a background thread to avoid UI freezing.
+     */
     @FXML
     private void handlePlaySelected() {
         Song selectedSong = songsTable.getSelectionModel().getSelectedItem();
