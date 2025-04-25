@@ -9,6 +9,7 @@ import com.model.Lesson;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +35,28 @@ public class DataLoader {
      */
     public static List<User> loadUsers() {
         try {
-            File file = new File(Constants.USER_FILE);
-            if (!file.exists()) return new ArrayList<>();
-            return objectMapper.readValue(file, new TypeReference<List<User>>() {});
+            InputStream inputStream = DataLoader.class.getClassLoader().getResourceAsStream("User.json");
+    
+            if (inputStream == null) {
+                System.out.println("User.json not found in resources!");
+                return new ArrayList<>();
+            }
+    
+            List<User> users = objectMapper.readValue(inputStream, new TypeReference<List<User>>() {});
+            System.out.println("Loaded users: " + users.size());
+            return users;
+    
+        } catch (com.fasterxml.jackson.databind.JsonMappingException mappingError) {
+            System.out.println("JSON mapping error: " + mappingError.getMessage());
+            mappingError.printStackTrace();
+            return new ArrayList<>();
         } catch (IOException e) {
             e.printStackTrace();
             return new ArrayList<>();
         }
     }
+    
+
     /**
      * Loads a list of songs from the song JSON file.
      * 

@@ -32,7 +32,7 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        // ✅ Load user data from JSON before showing the login screen
+        // Load user data from JSON before showing the login screen
         DataLoader.populateUserList();
 
         scene = new Scene(loadFXML("primary"), 640, 480);
