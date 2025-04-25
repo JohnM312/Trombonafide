@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.trombonafide.PrimaryController"
-      alignment="CENTER" spacing="20">
-    <Button text="Go to Secondary View" onAction="#switchToSecondary"/>
+      alignment="CENTER" spacing="15" style="-fx-padding: 30;">
+    
+    <Label text="Trombonafide Login" style="-fx-font-size: 20;" />
+    
+    <TextField fx:id="usernameField" promptText="Username" />
+    <PasswordField fx:id="passwordField" promptText="Password" />
+    
+    <Button text="Login" onAction="#handleLogin" />
+    
+    <Label fx:id="errorLabel" textFill="red" />
 </VBox>

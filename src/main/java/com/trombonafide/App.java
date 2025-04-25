@@ -2,6 +2,8 @@ package com.trombonafide;
 
 import java.io.IOException;
 
+import com.trombonafide.util.DataLoader; // <-- Make sure this is the correct package
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,18 +11,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * this class serves as the main entry point for the Trombonafide JavaFX application.
+ * This class serves as the main entry point for the Trombonafide JavaFX application.
  * It is responsible for initializing the GUI, loading FXML views, and managing scene transitions.
  * 
- * extends {@link javafx.application.Application}
+ * Extends {@link javafx.application.Application}
  * 
- * @author Andrew Lim
+ * @author Andrew Lim and Aiden Campbell
  */
 public class App extends Application {
     /**
      * The main JavaFX scene used throughout the application.
      */
     private static Scene scene;
+
     /**
      * Starts the JavaFX application and loads the initial (primary) view.
      * 
@@ -29,12 +32,15 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        System.out.println(App.class.getResource("primary.fxml"));
+        // ✅ Load user data from JSON before showing the login screen
+        DataLoader.populateUserList();
 
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
+        stage.setTitle("Trombonafide - Login");
         stage.show();
     }
+
     /**
      * Replaces the root of the current scene with a new view loaded from the given FXML file.
      * 
@@ -44,9 +50,10 @@ public class App extends Application {
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
-     /**
+
+    /**
      * Loads an FXML file and returns the resulting UI hierarchy as a {@link Parent} node.
-     * 
+     *
      * @param fxml the name of the FXML file (without the .fxml extension)
      * @return the root node loaded from the FXML file
      * @throws IOException if the FXML file cannot be found or loaded
@@ -55,6 +62,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
+
     /**
      * The main method, which launches the JavaFX application.
      * 
@@ -63,5 +71,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }

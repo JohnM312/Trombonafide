@@ -3,6 +3,7 @@ package com.trombonafide.util;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.model.User;
+import com.model.UserList;
 import com.model.Song;
 import com.model.Lesson;
 
@@ -71,4 +72,14 @@ public class DataLoader {
             return new ArrayList<>();
         }
     }
+
+    /**
+     * Loads users from JSON and populates the shared UserList instance.
+     */
+    public static void populateUserList() {
+        List<User> users = loadUsers();
+        UserList.getInstance().getUsers().addAll(users);
+        System.out.println("Loaded users: " + users.size());
+    }
+    
 }
