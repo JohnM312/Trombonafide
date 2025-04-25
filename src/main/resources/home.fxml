@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+    <?import javafx.scene.control.Button?>
+    <?import javafx.geometry.Insets?>
+    <?import javafx.scene.control.Label?>
+    <?import javafx.scene.text.Font?>
+    
+    <VBox xmlns="http://javafx.com/javafx/11.0.1"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.trombonafide.HomeController"
+          alignment="CENTER"
+          style="-fx-background-color: black;"
+          spacing="40">
+        <padding>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </padding>
+    
+        <Label text="Welcome to Trombonafide – your go-to place to learn, play, and master music! Whether you're just starting out or sharpening your skills, we're here to help make your musical journey fun and easy. Let's get playing!"
+               textAlignment="CENTER"
+               wrapText="true"
+               style="-fx-text-fill: yellow; -fx-font-size: 20px;">
+            <font>
+               <Font size="20.0" />
+            </font>
+        </Label>
+    
+        <VBox alignment="CENTER" spacing="20">
+            <Button text="Library"
+                    onAction="#goToLibrary"
+                    styleClass="home-button"/>
+            <Button text="Lessons"
+                    onAction="#goToLessons"
+                    styleClass="home-button"/>
+            <Button text="Profiles"
+                    onAction="#goToProfiles"
+                    styleClass="home-button"/>
+        </VBox>
+    </VBox>
+    HomeController.java:
+    package com.trombonafide;
+    
+    import javafx.event.ActionEvent;
+    import javafx.fxml.FXML;
+    import java.io.IOException;
+    
+    public class HomeController {
+    
+        @FXML
+        private void goToLibrary(ActionEvent event) throws IOException {
+            App.setRoot("library"); // Navigate to library.fxml
+        }
+    
+        @FXML
+        private void goToLessons(ActionEvent event) throws IOException {
+            App.setRoot("lessons"); // Navigate to lessons.fxml
+        }
+    
+        @FXML
+        private void goToProfiles(ActionEvent event) throws IOException {
+            App.setRoot("profiles"); // Navigate to profiles.fxml
+        }
+    }
