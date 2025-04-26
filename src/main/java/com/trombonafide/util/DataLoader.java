@@ -6,6 +6,7 @@ import com.model.User;
 import com.model.UserList;
 import com.model.Song;
 import com.model.Lesson;
+import com.model.LessonList;
 
 import java.io.File;
 import java.io.IOException;
@@ -96,5 +97,14 @@ public class DataLoader {
         UserList.getInstance().getUsers().addAll(users);
         System.out.println("Loaded users: " + users.size());
     }
-    
+
+
+    /**
+     * Loads lessons from JSON and populates the shared LessonList instance.
+     */
+    public static void populateLessonList() {
+        List<Lesson> lessons = loadLessons();
+        LessonList.getInstance().getLessons().addAll(lessons);
+        System.out.println("Loaded lessons: " + lessons.size());
+    }
 }
