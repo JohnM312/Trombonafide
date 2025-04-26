@@ -32,6 +32,8 @@ public class App extends Application {
      * The main JavaFX scene used throughout the application.
      */
     private static Scene scene;
+    private static Stage primaryStage;
+
 
     /**
      * Starts the JavaFX application and loads the initial (primary) view.
@@ -41,25 +43,22 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        /**
-         * Load user data before showing the login screen
-         */
         DataLoader.populateUserList();
-        
-        /**
-         * Try to load songs (but don't fail if JSON isn't found)
-         */
+        DataLoader.populateLessonList();
+    
         try {
             loadSongsFromJson();
         } catch (Exception e) {
             LOGGER.log(Level.WARNING, "Could not load songs from JSON", e);
         }
-
+    
+        primaryStage = stage; // ✅ NEW LINE to store stage
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.setTitle("Trombonafide - Login");
         stage.show();
     }
+    
 
     /**
      * Loads songs from the Song.json file into the system.
@@ -108,4 +107,14 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    /**
+     * Returns the primary stage.
+     *
+     * @return the primary Stage
+     */
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
 }

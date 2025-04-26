@@ -10,5 +10,9 @@
     
     <Label fx:id="welcomeLabel" style="-fx-font-size: 16;" />
 
+    <Button text="View Lessons" onAction="#handleViewLessons"/>
+    <Button text="View Songs" onAction="#handleViewSongs"/>
+    <Button text="View Progress" onAction="#handleViewProgress"/>
+    
     <Button text="Log Out" onAction="#switchToPrimary"/>
 </VBox>

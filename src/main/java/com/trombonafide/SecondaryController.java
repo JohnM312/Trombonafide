@@ -23,4 +23,27 @@ public class SecondaryController {
         musicSystem.logout(); // optional: log out the user
         App.setRoot("primary");
     }
+
+
+    @FXML
+    private void handleViewSongs() {
+        System.out.println("View Songs clicked!");
+        // Later: Navigate to songs view
+    }
+
+    @FXML
+    private void handleViewProgress() {
+        System.out.println("View Progress clicked!");
+        // Later: Navigate to progress view
+    }
+
+    @FXML
+    private void handleViewLessons() {
+    try {
+        App.setRoot("lessons");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
 }
