@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" prefHeight="588.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trombonafide.PrimaryController">
 
@@ -15,28 +16,31 @@
             <children>
 
                 <!-- Title and Welcome Messages -->
-                <Label style="-fx-font-size: 20; -fx-background-color: transparent;" text="Trombonafide" textFill="#fff81d" />
+                <Label style="-fx-font-size: 35; -fx-background-color: transparent; -fx-font-weight: bold;" text="Trombonafide" textFill="#fff81d">
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
 
-                <Label style="-fx-font-size: 20; -fx-background-color: transparent;" text="Welcome to the World of Trombonafide!" textFill="#fff81d" />
+                <Label style="-fx-font-size: 25; -fx-background-color: transparent;" text="Welcome to the World of Trombonafide!" textFill="#fff81d" />
 
                 <Label style="-fx-font-size: 20; -fx-background-color: transparent;" text="Login to Your Account" textFill="#fff81d" />
 
                 <!-- Username Input -->
-                <TextField fx:id="usernameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="295.0" promptText="Username" style="-fx-background-color: #FFF81D; -fx-text-fill: black;" />
+                <TextField fx:id="usernameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="320.0" promptText="Username" style="-fx-background-color: #FFF81D; -fx-text-fill: black; -fx-prompt-text-fill: black;" />
 
                 <!-- Password Input -->
-                <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="295.0" promptText="Password" style="-fx-background-color: #FFF81D;" />
+                <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #FFF81D; -fx-prompt-text-fill: black;" />
 
                 <!-- Login Button -->
-                <Button onAction="#handleLogin" style="-fx-background-color: #FFF81D;" text="Login" />
+                <Button onAction="#handleLogin" styleClass="button" text="Login" />
 
                 <!-- New Here? Section -->
-                <Label style="-fx-font-size: 20;" text="New Here?" textFill="#fff81d" />
+                <Label style="-fx-font-size: 25;" text="New Here?" textFill="#fff81d" />
 
-                <Label style="-fx-font-size: 20;" text="Sign up to explore everything our app has to offer!" textFill="#fff81d" />
+                <Label style="-fx-font-size: 25;" text="Sign up to explore everything our app has to offer!" textFill="#fff81d" />
 
                 <!-- Sign Up Button -->
-                <Button onAction="#handleSignup" style="-fx-background-color: #FFF81D;" text="Sign Up" />
+                <Button onAction="#handleSignup" styleClass="button" text="Sign Up" />
 
                 <!-- Error Message -->
                 <Label fx:id="errorLabel" textFill="red" />

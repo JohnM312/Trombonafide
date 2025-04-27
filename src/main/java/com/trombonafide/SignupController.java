@@ -3,6 +3,7 @@ package com.trombonafide;
 import java.io.IOException;
 import java.util.Collections;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -12,6 +13,8 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Label;
 
@@ -116,5 +119,15 @@ public class SignupController {
                                             BackgroundPosition.CENTER, 
                                             backgroundSize);
         anchorPane.setBackground(new Background(background));
+
+        Rectangle overlay = new Rectangle();
+        overlay.setFill(new Color(0, 0, 0, 0.65));
+        overlay.widthProperty().bind(anchorPane.widthProperty());
+        overlay.heightProperty().bind(anchorPane.heightProperty());
+        anchorPane.getChildren().add(0, overlay);
+
+        Platform.runLater(() -> {
+            anchorPane.getScene().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        });
     }
 }

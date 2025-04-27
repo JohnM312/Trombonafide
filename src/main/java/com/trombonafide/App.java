@@ -59,7 +59,7 @@ public class App extends Application {
 
     Image backgroundImage = new Image(getClass().getResource("/images/background.jpg").toExternalForm());
 
-    scene = new Scene(root, backgroundImage.getWidth() * 1.2, backgroundImage.getHeight() * 1.2);
+    scene = new Scene(root, backgroundImage.getWidth() * 1.4, backgroundImage.getHeight() * 1.4);
 
     stage.setScene(scene);
     stage.setTitle("Trombonafide - Login");

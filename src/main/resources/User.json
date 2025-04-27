@@ -53,4 +53,15 @@
     "completedLessons" : [ "67817664-7908-4fed-8b55-d09eb78ae18a" ],
     "totalPoints" : 10
   }
+}, {
+  "uuid" : "ca44c933-c37e-4c19-9839-8fb85add31e5",
+  "firstName" : "a",
+  "lastName" : "a",
+  "username" : "a",
+  "password" : "a",
+  "email" : "a",
+  "progress" : {
+    "completedLessons" : [ ],
+    "totalPoints" : 0
+  }
 } ]
