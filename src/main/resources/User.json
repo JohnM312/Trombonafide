@@ -42,4 +42,15 @@
     "completedLessons" : [ ],
     "totalPoints" : 0
   }
+}, {
+  "uuid" : "91539f72-ef17-4052-957f-edef85962f9c",
+  "firstName" : "Aidennnn",
+  "lastName" : "c",
+  "username" : "1",
+  "password" : "1",
+  "email" : "1",
+  "progress" : {
+    "completedLessons" : [ "67817664-7908-4fed-8b55-d09eb78ae18a" ],
+    "totalPoints" : 10
+  }
 } ]
