@@ -27,9 +27,13 @@ public class SecondaryController {
 
     @FXML
     private void handleViewSongs() {
-        System.out.println("View Songs clicked!");
-        // Later: Navigate to songs view
+        try {
+            App.setRoot("library");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
 
     @FXML

@@ -117,4 +117,10 @@ public class LibraryController {
             new Thread(() -> musicSystem.playSong(selectedSong.getTitle())).start();
         }
     }
+
+    @FXML
+    private void handleStop() {
+        musicSystem.stopSong();
+    }
+
 }
