@@ -41,6 +41,6 @@ public class ProgressController {
 
     @FXML
     private void handleBack() throws IOException {
-        App.setRoot("secondary");
+        App.setRoot("home");
     }
 }

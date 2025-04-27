@@ -36,7 +36,7 @@ public class LessonsController {
      */
     @FXML
     private void handleBack() throws IOException {
-        App.setRoot("secondary");
+        App.setRoot("home");
     }
 
     /**

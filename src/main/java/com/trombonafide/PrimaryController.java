@@ -36,7 +36,7 @@ public class PrimaryController {
         String password = passwordField.getText();
 
         if (musicSystem.login(username, password)) {
-            App.setRoot("secondary");
+            App.setRoot("home");
         } else {
             errorLabel.setText("Invalid username or password.");
         }

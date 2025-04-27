@@ -107,7 +107,7 @@ public class LibraryController {
     @FXML
     private void handleBack() throws IOException {
         musicSystem.stopSong();
-        App.setRoot("secondary");
+        App.setRoot("home");
     }
 
     /**
