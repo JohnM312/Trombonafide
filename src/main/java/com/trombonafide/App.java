@@ -15,6 +15,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -43,21 +44,29 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        DataLoader.populateUserList();
-        DataLoader.populateLessonList();
-    
-        try {
-            loadSongsFromJson();
-        } catch (Exception e) {
-            LOGGER.log(Level.WARNING, "Could not load songs from JSON", e);
-        }
-    
-        primaryStage = stage; // ✅ NEW LINE to store stage
-        scene = new Scene(loadFXML("primary"), 640, 480);
-        stage.setScene(scene);
-        stage.setTitle("Trombonafide - Login");
-        stage.show();
+    DataLoader.populateUserList();
+    DataLoader.populateLessonList();
+
+    try {
+        loadSongsFromJson();
+    } catch (Exception e) {
+        LOGGER.log(Level.WARNING, "Could not load songs from JSON", e);
     }
+
+    primaryStage = stage; 
+
+    Parent root = loadFXML("primary");
+
+    Image backgroundImage = new Image(getClass().getResource("/images/background.jpg").toExternalForm());
+
+    scene = new Scene(root, backgroundImage.getWidth() * 1.2, backgroundImage.getHeight() * 1.2);
+
+    stage.setScene(scene);
+    stage.setTitle("Trombonafide - Login");
+    stage.show();
+    stage.setResizable(false);
+
+}
     
 
     /**

@@ -7,30 +7,43 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="449.0" prefWidth="636.0" spacing="15" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trombonafide.PrimaryController">
-   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="741.0" style="-fx-background-image: url(&quot;/images/background.png&quot;); -fx-background-size: cover; -fx-background-repeat: no-repeat; -fx-background-position: center center;">
-      <children>
-         <!-- LOGIN button -->
-         <Button layoutX="346.0" layoutY="274.0" onAction="#handleLogin" style="-fx-background-color: #FFF81D;" text="Login" />
+<AnchorPane fx:id="anchorPane" prefHeight="588.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trombonafide.PrimaryController">
 
-         <!-- SIGN UP button -->
-         <Button layoutX="340.0" layoutY="419.0" onAction="#handleSignup" style="-fx-background-color: #FFF81D;" text="Sign Up" />
-          
-         <!-- Username input -->
-         <TextField fx:id="usernameField" layoutX="178.0" layoutY="169.0" prefHeight="26.0" prefWidth="385.0" promptText="Username" style="-fx-background-color: #FFF81D; -fx-text-fill: black;" />
-         
-         <!-- Password input -->
-         <PasswordField fx:id="passwordField" layoutX="177.0" layoutY="217.0" prefHeight="23.0" prefWidth="387.0" promptText="Password" style="-fx-background-color: #FFF81D;" />
-         
-         <!-- Title + Welcome Messages -->
-         <Label layoutX="311.0" layoutY="65.0" style="-fx-font-size: 20; -fx-background-color: transparent;" text="Trombonafide" textFill="#fff81d" />
-         <Label layoutX="195.0" layoutY="103.0" style="-fx-font-size: 20; -fx-background-color: transparent;" text="Welcome to the World of Trombonafide!" textFill="#fff81d" />
-         <Label layoutX="276.0" layoutY="130.0" style="-fx-font-size: 20; -fx-background-color: transparent;" text="Login to Your Account" textFill="#fff81d" />
-         <Label layoutX="323.0" layoutY="332.0" style="-fx-font-size: 20;" text="New Here?" textFill="#fff81d" />
-         <Label layoutX="164.0" layoutY="373.0" style="-fx-font-size: 20;" text="Sign up to explore everything our app has to offer!" textFill="#fff81d" />
-         
-         <!-- Error Message -->
-         <Label fx:id="errorLabel" textFill="red" />
-      </children>
-   </AnchorPane>
-</VBox>
+    <children>
+
+        <VBox fx:id="centerVBox" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="567.0" prefWidth="836.0" spacing="15" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+
+                <!-- Title and Welcome Messages -->
+                <Label style="-fx-font-size: 20; -fx-background-color: transparent;" text="Trombonafide" textFill="#fff81d" />
+
+                <Label style="-fx-font-size: 20; -fx-background-color: transparent;" text="Welcome to the World of Trombonafide!" textFill="#fff81d" />
+
+                <Label style="-fx-font-size: 20; -fx-background-color: transparent;" text="Login to Your Account" textFill="#fff81d" />
+
+                <!-- Username Input -->
+                <TextField fx:id="usernameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="295.0" promptText="Username" style="-fx-background-color: #FFF81D; -fx-text-fill: black;" />
+
+                <!-- Password Input -->
+                <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="295.0" promptText="Password" style="-fx-background-color: #FFF81D;" />
+
+                <!-- Login Button -->
+                <Button onAction="#handleLogin" style="-fx-background-color: #FFF81D;" text="Login" />
+
+                <!-- New Here? Section -->
+                <Label style="-fx-font-size: 20;" text="New Here?" textFill="#fff81d" />
+
+                <Label style="-fx-font-size: 20;" text="Sign up to explore everything our app has to offer!" textFill="#fff81d" />
+
+                <!-- Sign Up Button -->
+                <Button onAction="#handleSignup" style="-fx-background-color: #FFF81D;" text="Sign Up" />
+
+                <!-- Error Message -->
+                <Label fx:id="errorLabel" textFill="red" />
+
+            </children>
+        </VBox>
+
+    </children>
+
+</AnchorPane>
