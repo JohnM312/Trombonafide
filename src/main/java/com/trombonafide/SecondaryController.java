@@ -31,11 +31,6 @@ public class SecondaryController {
         // Later: Navigate to songs view
     }
 
-    @FXML
-    private void handleViewProgress() {
-        System.out.println("View Progress clicked!");
-        // Later: Navigate to progress view
-    }
 
     @FXML
     private void handleViewLessons() {
@@ -45,5 +40,15 @@ public class SecondaryController {
         e.printStackTrace();
     }
 }
+
+    @FXML
+    private void handleViewProgress() {
+        try {
+            App.setRoot("progress");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

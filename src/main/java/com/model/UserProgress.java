@@ -69,5 +69,14 @@ public class UserProgress implements Serializable {
                 ", totalPoints=" + totalPoints +
                 '}';
     }
+
+    public void addCompletedLesson(UUID lessonId) {
+        completedLessons.add(lessonId);
+    }
+    
+    public void addPoints(int points) {
+        totalPoints += points;
+    }
+    
 }
 

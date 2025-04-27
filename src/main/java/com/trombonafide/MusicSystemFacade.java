@@ -2,6 +2,7 @@ package com.trombonafide;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.model.Artist;
 import com.model.Lesson;
@@ -310,4 +311,20 @@ public void addSong(Song song) {
             }
         return result;
     }
+
+    /**
+     * Retrieves a lesson by its UUID.
+     *
+     * @param id the UUID of the lesson
+     * @return the Lesson if found, or null if not found
+     */
+    public Lesson getLessonById(UUID id) {
+        for (Lesson lesson : lessonList.getLessons()) {
+            if (lesson.getUuid().equals(id)) {
+                return lesson;
+            }
+        }
+        return null;
+    }
+
 }

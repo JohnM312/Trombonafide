@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.trombonafide.ProgressController"
+      alignment="CENTER" spacing="15" style="-fx-padding: 30;">
+    
+    <Label text="Your Progress" style="-fx-font-size: 20;" />
+    
+    <Label fx:id="pointsLabel" style="-fx-font-size: 16;" />
+    
+    <ListView fx:id="completedLessonsList" prefHeight="200" prefWidth="300"/>
+
+    <Button text="Back to Dashboard" onAction="#handleBack"/>
+</VBox>
