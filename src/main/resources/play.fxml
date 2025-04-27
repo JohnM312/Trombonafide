@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/11.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.trombonafide.PlayController">
+    
+    <!-- Background for notes to fly across -->
+    <Rectangle width="600" height="400" fill="black" />
+    
+    <!-- Vertical Slider for user pitch control -->
+    <Slider fx:id="pitchSlider" layoutX="50" layoutY="50" orientation="VERTICAL" prefHeight="300" min="0" max="100"/>
+    
+    <!-- A Label showing current score -->
+    <Label fx:id="scoreLabel" layoutX="50" layoutY="20" style="-fx-font-size: 18; -fx-text-fill: white;" text="Score: 0"/>
+
+    <!-- "Back to Library" button -->
+    <Button layoutX="500" layoutY="350" text="Back" onAction="#handleBackToLibrary"/>
+
+</AnchorPane>
