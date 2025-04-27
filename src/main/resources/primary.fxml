@@ -26,10 +26,16 @@
                 <Label style="-fx-font-size: 20; -fx-background-color: transparent;" text="Login to Your Account" textFill="#fff81d" />
 
                 <!-- Username Input -->
-                <TextField fx:id="usernameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="320.0" promptText="Username" style="-fx-background-color: #FFF81D; -fx-text-fill: black; -fx-prompt-text-fill: black;" />
+                <TextField fx:id="usernameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="350.0" promptText="Username" style="-fx-background-color: #FFF81D; -fx-text-fill: black; -fx-prompt-text-fill: black;">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
 
                 <!-- Password Input -->
-                <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #FFF81D; -fx-prompt-text-fill: black;" />
+                <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="350.0" promptText="Password" style="-fx-background-color: #FFF81D; -fx-prompt-text-fill: black;">
+               <font>
+                  <Font size="14.0" />
+               </font></PasswordField>
 
                 <!-- Login Button -->
                 <Button onAction="#handleLogin" styleClass="button" text="Login" />

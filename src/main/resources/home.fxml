@@ -60,5 +60,7 @@
             </children>
          </HBox>
           </VBox>
+      <Button onAction="#goToPrimary" prefHeight="18.0" prefWidth="115.0" style="-fx-background-color: transparent; -fx-text-fill: yellow; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 15px;" styleClass="button" text="←sign out">
+      </Button>
    </children>
 </AnchorPane>

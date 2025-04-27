@@ -3,7 +3,7 @@
     -fx-text-fill: black;
     -fx-font-size: 17px;
     -fx-font-weight: bold;
-    -fx-background-radius: 8px;
+    -fx-background-radius: 10px;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5,0.3,0,1);
     -fx-transition: all 0.3s ease;

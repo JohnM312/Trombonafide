@@ -37,6 +37,10 @@ public class HomeController {
     private void goToProfiles(ActionEvent event) throws IOException {
         App.setRoot("profiles"); // Navigate to profiles.fxml
     }
+    @FXML
+    private void goToPrimary(ActionEvent event) throws IOException {
+        App.setRoot("primary");
+    }
 
     @FXML
     public void initialize() {
