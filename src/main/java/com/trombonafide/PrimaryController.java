@@ -31,4 +31,10 @@ public class PrimaryController {
             errorLabel.setText("Invalid username or password.");
         }
     }
+
+    @FXML
+    private void handleSignup() throws IOException {
+        App.setRoot("signup");
+    }
+
 }

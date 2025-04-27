@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.trombonafide.SignupController"
+      alignment="CENTER" spacing="15" style="-fx-padding: 30;">
+    
+    <Label text="Create a New Account" style="-fx-font-size: 20;" />
+
+    <TextField fx:id="firstNameField" promptText="First Name" />
+    <TextField fx:id="lastNameField" promptText="Last Name" />
+    <TextField fx:id="usernameField" promptText="Username" />
+    <PasswordField fx:id="passwordField" promptText="Password" />
+    <TextField fx:id="emailField" promptText="Email" />
+
+    <Button text="Create Account" onAction="#handleCreateAccount" />
+    <Button text="Back to Login" onAction="#handleBackToLogin" />
+
+    <Label fx:id="errorLabel" textFill="red" />
+</VBox>
