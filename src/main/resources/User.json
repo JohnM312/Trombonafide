@@ -1,32 +1,45 @@
-[
-    {
-      "uuid": "f1a2b3c4-d5e6-7890-1abc-def012345678",
-      "firstName": "Alice",
-      "lastName": "Smith",
-      "username": "asmith",
-      "email": "alice.smith@example.com",
-      "password": "1",
-      "progress": {
-          "completedLessons": [
-            "a1b2c3d4-e5f6-7890-1234-567890abcdef",
-            "bcdef012-3456-789a-bcde-f0123456789a"
-          ],
-          "totalPoints": 100
-        }
-    },
-    {
-      "uuid": "12345abc-6789-0def-1abc-def012345678",
-      "firstName": "Bob",
-      "lastName": "Johnson",
-      "username": "bjohnson",
-      "email": "bob.johnson@example.com",
-      "password": "anotherStrongPassword",
-      "progress": {
-          "completedLessons": [
-            "def12345-6789-abcd-ef01-23456789abcd"
-          ],
-          "totalPoints": 75
-        }
-    }
-  ]
-  
+[ {
+  "uuid" : "f1a2b3c4-d5e6-7890-1abc-def012345678",
+  "firstName" : "Alice",
+  "lastName" : "Smith",
+  "username" : "asmith",
+  "password" : "1",
+  "email" : "alice.smith@example.com",
+  "progress" : {
+    "completedLessons" : [ "a1b2c3d4-e5f6-7890-1234-567890abcdef", "bcdef012-3456-789a-bcde-f0123456789a" ],
+    "totalPoints" : 100
+  }
+}, {
+  "uuid" : "12345abc-6789-0def-1abc-def012345678",
+  "firstName" : "Bob",
+  "lastName" : "Johnson",
+  "username" : "bjohnson",
+  "password" : "anotherStrongPassword",
+  "email" : "bob.johnson@example.com",
+  "progress" : {
+    "completedLessons" : [ "def12345-6789-abcd-ef01-23456789abcd" ],
+    "totalPoints" : 75
+  }
+}, {
+  "uuid" : "91539f72-ef17-4052-957f-edef85962f9c",
+  "firstName" : "Aidennnn",
+  "lastName" : "c",
+  "username" : "1",
+  "password" : "1",
+  "email" : "1",
+  "progress" : {
+    "completedLessons" : [ ],
+    "totalPoints" : 0
+  }
+}, {
+  "uuid" : "18d19e0b-100e-409f-960c-0e239ebdc21a",
+  "firstName" : "owen",
+  "lastName" : "krut",
+  "username" : "ow",
+  "password" : "ow",
+  "email" : "ow",
+  "progress" : {
+    "completedLessons" : [ ],
+    "totalPoints" : 0
+  }
+} ]
