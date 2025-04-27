@@ -5,6 +5,13 @@ import java.util.Collections;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Label;
 
@@ -45,6 +52,9 @@ public class SignupController {
     // Label for displaying error messages
     @FXML
     private Label errorLabel;
+    // AnchorPane for the background image
+    @FXML
+    private AnchorPane anchorPane;
 
     /** Singleton facade for interacting with the music system */
     private final MusicSystemFacade musicSystem = MusicSystemFacade.getFacadeInstance();
@@ -91,5 +101,20 @@ public class SignupController {
     @FXML
     private void handleBackToLogin() throws IOException {
         App.setRoot("primary");
+    }
+    /**
+     * initialize the singup scene by setting the backgroun image
+     */
+    @FXML
+    public void initialize() {
+        Image backgroundImage = new Image(getClass().getResource("/images/signup-background.png").toExternalForm());
+
+        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
+        BackgroundImage background = new BackgroundImage(backgroundImage, 
+                                            BackgroundRepeat.NO_REPEAT, 
+                                            BackgroundRepeat.NO_REPEAT, 
+                                            BackgroundPosition.CENTER, 
+                                            backgroundSize);
+        anchorPane.setBackground(new Background(background));
     }
 }
