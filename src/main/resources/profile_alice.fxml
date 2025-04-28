@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.trombonafide.ProfileAliceController"
+            style="-fx-background-color: white; -fx-padding: 20;">
+
+  <top>
+    <Label text="@Alice"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"
+           BorderPane.alignment="CENTER"/>
+  </top>
+
+  <center>
+    <VBox alignment="CENTER" spacing="15">
+      <ImageView fitWidth="150" fitHeight="150">
+        <image>
+          <Image url="@../images/user456.png"/>
+        </image>
+      </ImageView>
+      <Label text="Level: Intermediate"
+             style="-fx-font-size: 18px;"/>
+      
+    </VBox>
+  </center>
+
+  <bottom>
+    <HBox alignment="CENTER" style="-fx-padding: 20;">
+      <Button text="Back to Profiles"
+              onAction="#handleBackToProfiles"
+              style="-fx-background-color: yellow;
+                     -fx-text-fill: black;
+                     -fx-background-radius: 20;
+                     -fx-padding: 10 20;
+                     -fx-font-size: 14px;"/>
+    </HBox>
+  </bottom>
+
+</BorderPane>
