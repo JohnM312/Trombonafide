@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="490.0" prefWidth="817.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trombonafide.SlideLessonController">
+    <VBox alignment="CENTER" layoutX="149.0" layoutY="-40.0" prefHeight="490.0" prefWidth="500.0" spacing="20.0">
+      <Label style="-fx-text-fill: yellow; -fx-font-size: 30; -fx-font-weight: bold;" text="Welcome to sliding practice" />
+        <Button fx:id="startButton" onAction="#handleStartLesson" prefWidth="194.0" style="-fx-font-size: 18px;" text="Start Sliding Practice">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin></Button>
+        <Label fx:id="instructionLabel" style="-fx-text-fill: white; -fx-font-size: 24px;" />
+        <Slider fx:id="slideSlider" prefWidth="400.0" />
+        <Button onAction="#handleBackToHome" style="-fx-font-size: 14px;" text="Back to Home">
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin></Button>
+    </VBox>
+</AnchorPane>

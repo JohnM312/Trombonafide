@@ -63,15 +63,18 @@ public class LessonDetailController {
      * awards points and saves the updated user progress into JSON.
      */
     @FXML
-    private void handleStartLesson() {
+    private void handleStartLesson() throws IOException {
         if (currentLesson != null) {
             User currentUser = MusicSystemFacade.getFacadeInstance().getCurrentUser();
             if (currentUser != null) {
                 if (!currentUser.getProgress().getCompletedLessons().contains(currentLesson.getUuid())) {
+                    // Mark lesson completed
                     currentUser.getProgress().addCompletedLesson(currentLesson.getUuid());
+
+                    // Add 10 points
                     currentUser.getProgress().addPoints(10);
 
-                    // Save updated user progress to Users.json
+                    // Save updated user data
                     com.trombonafide.util.DataWriter.saveUsers(Collections.singletonList(currentUser));
 
                     System.out.println("Lesson '" + currentLesson.getTitle() + "' completed! +10 points awarded.");
@@ -80,6 +83,9 @@ public class LessonDetailController {
                 }
             }
         }
+
+        // Now switch to the Slide Lesson screen
+        App.setRoot("slide_lesson");
     }
 
     /**
