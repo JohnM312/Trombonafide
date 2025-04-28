@@ -5,7 +5,10 @@ import com.trombonafide.Note;
 import com.trombonafide.util.MusicPlayer;
 import javafx.animation.AnimationTimer;
 import javafx.animation.PauseTransition;
+import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
@@ -137,7 +140,7 @@ public class PlayController {
                 ).start();
 
                 // Check hit or miss
-                double sliderY = mapMidiToY((int)pitchSlider.getValue());
+                double sliderY = mapMidiToY((int) pitchSlider.getValue());
                 boolean hit = Math.abs(sliderY - c.getCenterY()) < HIT_THRESHOLD;
 
                 int prevStreak = streak;
@@ -169,21 +172,14 @@ public class PlayController {
         toRemove.forEach(nc -> rootPane.getChildren().remove(nc.getCircle()));
     }
 
-    /**
-     * Converts a MIDI number into a Y coordinate within the pane,
-     * so that minMidi goes bottom, maxMidi goes top.
-     */
     private double mapMidiToY(int midi) {
         double h = rootPane.getHeight();
         double usable = h - 2 * MARGIN;
-        double pct = (double)(midi - minMidi) / (maxMidi - minMidi);
+        double pct = (double) (midi - minMidi) / (maxMidi - minMidi);
         pct = Math.max(0, Math.min(1, pct));
         return MARGIN + (1 - pct) * usable;
     }
 
-    /**
-     * Shows a temporary "+N" label at the hit location in bright green.
-     */
     private void flashPoints(double x, double y, String text) {
         Label pop = new Label(text);
         pop.setFont(Font.font(24));
@@ -197,9 +193,6 @@ public class PlayController {
         wait.play();
     }
 
-    /**
-     * Shows a centered banner message (e.g. "5-Streak!") briefly at the top.
-     */
     private void flashPopup(String message) {
         Label pop = new Label(message);
         pop.setFont(Font.font(32));
@@ -215,7 +208,8 @@ public class PlayController {
     }
 
     /**
-     * Displays the final results overlay when the song completes.
+     * Displays the final results overlay when the song completes,
+     * with buttons for Home and Library.
      */
     private void showResults() {
         // Dim background
@@ -241,7 +235,35 @@ public class PlayController {
         stats.setLayoutX((rootPane.getWidth() - 300) / 2);
         stats.setLayoutY(180);
 
-        overlay.getChildren().addAll(title, stats);
+        // Home button
+        Button homeBtn = new Button("Home");
+        homeBtn.setFont(Font.font(18));
+        homeBtn.setLayoutX((rootPane.getWidth() / 2) - 100);
+        homeBtn.setLayoutY(260);
+        homeBtn.setOnAction(e -> {
+            timer.stop();
+            try {
+                App.setRoot("home");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        // Library button
+        Button libBtn = new Button("Library");
+        libBtn.setFont(Font.font(18));
+        libBtn.setLayoutX((rootPane.getWidth() / 2) + 20);
+        libBtn.setLayoutY(260);
+        libBtn.setOnAction(e -> {
+            timer.stop();
+            try {
+                App.setRoot("library");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        overlay.getChildren().addAll(title, stats, homeBtn, libBtn);
         rootPane.getChildren().add(overlay);
     }
 
