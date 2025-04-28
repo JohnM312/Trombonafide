@@ -1,47 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx/11.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.trombonafide.ProfileClaireController"
-            style="-fx-background-color: white; -fx-padding: 20;">
+            style="-fx-background-color: black;">
 
-
+  
   <top>
-    <Label text="@Claire"
-           style="-fx-font-size: 24px; -fx-font-weight: bold;"
+    <Label text="Profile"
+           style="-fx-text-fill: yellow;
+                  -fx-font-size: 36px;
+                  -fx-font-weight: bold;"
            BorderPane.alignment="CENTER"/>
   </top>
 
   
   <center>
-    <VBox alignment="CENTER" spacing="15">
-      <ImageView fitWidth="150" fitHeight="150">
-        <image>
-          <Image url="@../images/user4567.png"/>
-        </image>
-      </ImageView>
-      <Label text="Level: Beginner"
-             style="-fx-font-size: 18px;"/>
-     
-    </VBox>
+    <ScrollPane fitToWidth="true"
+                style="-fx-background: black;
+                       -fx-control-inner-background: black;">
+      <VBox alignment="TOP_CENTER"
+            spacing="20"
+            style="-fx-padding: 40;
+                   -fx-background-color: black;">
+
+        
+        <StackPane prefWidth="200" prefHeight="200">
+          <ImageView fx:id="avatarView"
+                     fitWidth="200" fitHeight="200"
+                     preserveRatio="true"
+                     pickOnBounds="true">
+            <clip>
+              <Circle radius="100" centerX="100" centerY="100"/>
+            </clip>
+          </ImageView>
+        </StackPane>
+
+        
+        <Label text="Beginner"
+               style="-fx-background-color: yellow;
+                      -fx-text-fill: black;
+                      -fx-font-size: 18px;
+                      -fx-font-weight: bold;
+                      -fx-background-radius: 20;
+                      -fx-padding: 8 20;"
+               alignment="CENTER"/>
+
+        
+        <Label text="Username: @Claire"
+               style="-fx-background-color: yellow;
+                      -fx-text-fill: black;
+                      -fx-font-size: 20px;
+                      -fx-font-weight: bold;
+                      -fx-background-radius: 20;
+                      -fx-padding: 8 20;"
+               alignment="CENTER"/>
+
+        
+        <Label text="Learning Stats"
+               style="-fx-text-fill: yellow;
+                      -fx-font-size: 28px;
+                      -fx-font-weight: bold;"/>
+
+        <!-- Centered stats grid -->
+        <HBox alignment="CENTER">
+          <GridPane hgap="40" vgap="10">
+            <columnConstraints>
+              <ColumnConstraints halignment="RIGHT"/>
+              <ColumnConstraints halignment="LEFT"/>
+            </columnConstraints>
+
+            <Label text="Time Practiced this Week:"
+                   style="-fx-text-fill: yellow; -fx-font-size: 18px;"
+                   GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label text="3h 45m"
+                   style="-fx-text-fill: yellow; -fx-font-size: 18px;"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Lessons Completed:"
+                   style="-fx-text-fill: yellow; -fx-font-size: 18px;"
+                   GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label text="12"
+                   style="-fx-text-fill: yellow; -fx-font-size: 18px;"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Play Streak:"
+                   style="-fx-text-fill: yellow; -fx-font-size: 18px;"
+                   GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label text="4 Days"
+                   style="-fx-text-fill: yellow; -fx-font-size: 18px;"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+          </GridPane>
+        </HBox>
+
+        
+        <Button text="Back to Profiles"
+                onAction="#handleBackToProfiles"
+                style="-fx-background-color: yellow;
+                       -fx-text-fill: black;
+                       -fx-background-radius: 20;
+                       -fx-padding: 10 20;
+                       -fx-font-size: 14px;"/>
+
+      </VBox>
+    </ScrollPane>
   </center>
-
- 
-  <bottom>
-    <HBox alignment="CENTER" style="-fx-padding: 20;">
-      <Button text="Back to Profiles"
-              onAction="#handleBackToProfiles"
-              style="-fx-background-color: yellow;
-                     -fx-text-fill: black;
-                     -fx-background-radius: 20;
-                     -fx-padding: 10 20;
-                     -fx-font-size: 14px;"/>
-    </HBox>
-  </bottom>
-
 </BorderPane>
