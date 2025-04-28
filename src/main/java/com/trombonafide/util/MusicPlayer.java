@@ -1,8 +1,10 @@
 package com.trombonafide.util;
 
 import org.jfugue.player.Player;
-
+import org.jfugue.pattern.Pattern;
 import com.model.Song;
+import com.trombonafide.Note;
+
 /**
  * This class provides static methods to play songs and individual notes
  * using the JFugue music library.
@@ -17,6 +19,7 @@ public class MusicPlayer {
      * A single shared Player instance used for all playback operations.
      */
     private static final Player player = new Player();
+
     /**
      * Plays the musical notes associated with a given {@link Song}.
      * 
@@ -28,8 +31,15 @@ public class MusicPlayer {
             return;
         }
         System.out.println("Now playing: " + song.getTitle() + " by " + song.getArtist());
-        player.play(song.getNotes());
+
+        Pattern pattern = new Pattern();
+        for (Note note : song.getNotes()) {
+            pattern.add(note.getPitch() + note.getOctave() + "q "); // You can adjust "q" to match note duration
+        }
+
+        player.play(pattern);
     }
+
     /**
      * Plays a single musical note provided in JFugue string format.
      * 
@@ -41,4 +51,12 @@ public class MusicPlayer {
         }
         player.play(note);
     }
+
+    public static void playNoteWithInstrument(String note, String instrument) {
+        if (note == null || note.trim().isEmpty() || instrument == null) {
+            return;
+        }
+        player.play("I[" + instrument + "] " + note);
+    }
+    
 }

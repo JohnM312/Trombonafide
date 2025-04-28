@@ -1,28 +1,95 @@
 [
-    {
-      "title": "Mary Had a Little Lamb",
-      "artist": {
-        "firstName": "Traditional",
-        "lastName": "Nursery Rhyme",
-        "genre": "Children's"
-      },
-      "genre": "Nursery Rhyme",
-      "notes": "E D C D E E E D D D E G G",
-      "difficultyRate": 1,
-      "melodyStructure": 1.0,
-      "userId": "system"
+  {
+    "title": "Seven Nation Army",
+    "artist": {
+      "firstName": "The",
+      "lastName": "White Stripes",
+      "genre": "Rock"
     },
-    {
-      "title": "Ode to Joy",
-      "artist": {
-        "firstName": "Ludwig van",
-        "lastName": "Beethoven",
-        "genre": "Classical"
-      },
-      "genre": "Classical",
-      "notes": "E E F G G F E D C C D E E D D",
-      "difficultyRate": 3,
-      "melodyStructure": 1.5,
-      "userId": "system"
-    }
-  ]
+    "genre": "Rock",
+    "difficultyRate": 2,
+    "melodyStructure": 1.0,
+    "notes": [
+      {"pitch": "E3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "E3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "D3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "C3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "B2", "octave": 2, "duration": 1.0, "velocity": 100},
+      {"pitch": "G2", "octave": 2, "duration": 1.0, "velocity": 100},
+      {"pitch": "E3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "E3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "D3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "C3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "B2", "octave": 2, "duration": 1.0, "velocity": 100},
+      {"pitch": "G2", "octave": 2, "duration": 1.0, "velocity": 100},
+      {"pitch": "E3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "D3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "C3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "B2", "octave": 2, "duration": 1.0, "velocity": 100},
+      {"pitch": "G2", "octave": 2, "duration": 1.0, "velocity": 100},
+      {"pitch": "E2", "octave": 2, "duration": 1.0, "velocity": 100}
+    ]
+  },
+  {
+    "title": "Imperial March",
+    "artist": {
+      "firstName": "John",
+      "lastName": "Williams",
+      "genre": "Soundtrack"
+    },
+    "genre": "Soundtrack",
+    "difficultyRate": 3,
+    "melodyStructure": 1.5,
+    "notes": [
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "Eb3", "octave": 3, "duration": 0.5, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 0.5, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "Eb3", "octave": 3, "duration": 0.5, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 0.5, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 2.0, "velocity": 100},
+      {"pitch": "D4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "D4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "D4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "Eb4", "octave": 4, "duration": 0.5, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 0.5, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "Eb3", "octave": 3, "duration": 0.5, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 0.5, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 2.0, "velocity": 100}
+    ]
+  },
+  {
+    "title": "Smoke on the Water",
+    "artist": {
+      "firstName": "Deep",
+      "lastName": "Purple",
+      "genre": "Rock"
+    },
+    "genre": "Rock",
+    "difficultyRate": 2,
+    "melodyStructure": 1.1,
+    "notes": [
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "C4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "C4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "G3", "octave": 3, "duration": 1.0, "velocity": 100},
+      {"pitch": "D4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "F4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "G4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "F4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "D4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "C4", "octave": 4, "duration": 1.0, "velocity": 100},
+      {"pitch": "Bb3", "octave": 3, "duration": 1.0, "velocity": 100}
+    ]
+  }
+]

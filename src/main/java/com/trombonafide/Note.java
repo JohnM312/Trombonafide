@@ -1,16 +1,24 @@
 package com.trombonafide;
 
-public class Note {
+import java.io.Serializable;
+
+/**
+ * Represents a single musical note with pitch, octave, duration, and velocity.
+ */
+public class Note implements Serializable {
     private String pitch;
-    private double duration;
-    private int octave; // Added octave
-    private int velocity; // Added velocity
+    private int octave;
+    private double duration; // in beats
+    private int velocity;    // volume/intensity
 
-    public Note(String pitch, double duration) {
-        this.pitch = pitch;
-        this.duration = duration;
-    }
+    /**
+     * Default constructor needed for frameworks like Jackson.
+     */
+    public Note() {}
 
+    /**
+     * Constructs a Note with pitch, octave, duration, and velocity.
+     */
     public Note(String pitch, int octave, double duration, int velocity) {
         this.pitch = pitch;
         this.octave = octave;
@@ -18,32 +26,46 @@ public class Note {
         this.velocity = velocity;
     }
 
+    // Getters
     public String getPitch() {
         return pitch;
+    }
+
+    public int getOctave() {
+        return octave;
     }
 
     public double getDuration() {
         return duration;
     }
 
-    public void transpose(int interval) {
-        // This is a VERY basic implementation.  It only shifts the pitch name, and may not be musically correct.
-        String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
-        for (int i = 0; i < notes.length; i++) {
-            if (pitch.startsWith(notes[i])) {  //If the note pitch begins with the notes at this index.
-                int newIndex = (i + interval) % notes.length;
-                if (newIndex < 0) {
-                    newIndex += notes.length;  // Handle negative indices
-                }
+    public int getVelocity() {
+        return velocity;
+    }
 
-                String newPitch = notes[newIndex];
-                // If the note has an octave number, preserve it.
-                if (pitch.length() > notes[i].length()) {
-                    newPitch += pitch.substring(notes[i].length());
-                }
-                pitch = newPitch;
-                break;
-            }
-        }
+    // Setters
+    public void setPitch(String pitch) {
+        this.pitch = pitch;
+    }
+
+    public void setOctave(int octave) {
+        this.octave = octave;
+    }
+
+    public void setDuration(double duration) {
+        this.duration = duration;
+    }
+
+    public void setVelocity(int velocity) {
+        this.velocity = velocity;
+    }
+
+    @Override
+    public String toString() {
+        return pitch + octave;
+    }
+
+    public void transpose(int interval) {
+        this.octave += interval / 12;
     }
 }
