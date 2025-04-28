@@ -1,6 +1,8 @@
 package com.trombonafide;
 
 import com.model.Song;
+
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -10,6 +12,17 @@ import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.layout.AnchorPane;
+
+
 import java.util.Comparator;
 import java.io.IOException;
 
@@ -23,6 +36,7 @@ public class LibraryController {
     @FXML private TableColumn<Song, String> artistColumn;
     @FXML private TableColumn<Song, String> genreColumn;
     @FXML private TableColumn<Song, Integer> difficultyColumn;
+    @FXML private AnchorPane anchorPane;
 
     private final MusicSystemFacade musicSystem = MusicSystemFacade.getFacadeInstance();
 
@@ -34,6 +48,26 @@ public class LibraryController {
         setupColumns();
         loadSongs();
         setupSortListener();
+
+        Image backgroundImage = new Image(getClass().getResource("/images/library.jpg").toExternalForm());
+
+        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
+        BackgroundImage background = new BackgroundImage(backgroundImage, 
+                                            BackgroundRepeat.NO_REPEAT, 
+                                            BackgroundRepeat.NO_REPEAT, 
+                                            BackgroundPosition.CENTER, 
+                                            backgroundSize);
+        anchorPane.setBackground(new Background(background));
+
+        Rectangle overlay = new Rectangle();
+        overlay.setFill(new Color(0, 0, 0, 0.65));
+        overlay.widthProperty().bind(anchorPane.widthProperty());
+        overlay.heightProperty().bind(anchorPane.heightProperty());
+        anchorPane.getChildren().add(0, overlay);
+
+        Platform.runLater(() -> {
+            anchorPane.getScene().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        });
     }
 
     /**
