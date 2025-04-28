@@ -3,3 +3,5 @@ Trombonafide is a Music Tutorial Application that allows users to learn and impr
 Backend Implementation Video: https://youtu.be/sF82AO97auk
 
 Prototype: https://mockitt.com/proto/design/pb2lpr8aghsioepwb
+
+Frontend Implementation Video: https://youtu.be/b4CHem7a4bE
