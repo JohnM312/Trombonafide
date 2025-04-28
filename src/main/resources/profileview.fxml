@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trombonafide.ProfileViewController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trombonafide.ProfileViewController">
     <children>
-        <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
-            <Label fx:id="usernameLabel" style="-fx-text-fill: white; -fx-font-size: 20;" />
-            <Label fx:id="nameLabel" style="-fx-text-fill: white; -fx-font-size: 20;" />
-            <Label fx:id="emailLabel" style="-fx-text-fill: white; -fx-font-size: 20;" />
-            <Label fx:id="pointsLabel" style="-fx-text-fill: white; -fx-font-size: 20;" />
-            <Label fx:id="lessonsLabel" style="-fx-text-fill: white; -fx-font-size: 20;" />
+        <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" spacing="20.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <ImageView fitHeight="111.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="usernameLabel" style="-fx-text-fill: yellow; -fx-font-size: 20; -fx-font-weight: bold;" text="Username:" />
+            <Label fx:id="nameLabel" style="-fx-text-fill: yellow; -fx-font-size: 20; -fx-font-weight: bold;" text="Name:" />
+            <Label fx:id="emailLabel" style="-fx-text-fill: yellow; -fx-font-size: 20; -fx-font-weight: bold;" text="Email:" />
+            <Label fx:id="pointsLabel" style="-fx-text-fill: yellow; -fx-font-size: 20; -fx-font-weight: bold;" text="Points:" />
+            <Label fx:id="lessonsLabel" style="-fx-text-fill: yellow; -fx-font-size: 20; -fx-font-weight: bold;" text="Lessons Completed:" />
         </VBox>
-        <Button onAction="#goBack" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-text-fill: yellow; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 15px;" layoutX="20.0" layoutY="20.0" text="← Back" />
+        <Button layoutX="20.0" layoutY="20.0" onAction="#goBack" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-text-fill: yellow; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 15px;" text="← Back" />
+      <Text fill="YELLOW" layoutX="354.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: yellow; -fx-font-size: 35; -fx-font-weight: bold;" text="Profile" />
     </children>
 </AnchorPane>
