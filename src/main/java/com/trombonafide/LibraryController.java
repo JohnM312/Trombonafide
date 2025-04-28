@@ -164,12 +164,4 @@ public class LibraryController {
             }
         }
     }
-
-    /**
-     * Stops any song that's playing.
-     */
-    @FXML
-    private void handleStop() {
-        musicSystem.stopSong();
-    }
 }
