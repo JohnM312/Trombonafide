@@ -27,9 +27,8 @@ public class SlideLessonController {
     private boolean lessonStarted = false;
     private double lastPlayedPitch = -1;
 
-    private static final double PITCH_MIN = 40; // Approx Trombone low Bb
-    private static final double PITCH_MAX = 80; // Trombone upper range
-
+    private static final double PITCH_MIN = 40; 
+    private static final double PITCH_MAX = 80; 
     @FXML
     public void initialize() {
         slideSlider.setMin(PITCH_MIN);
@@ -66,7 +65,6 @@ public class SlideLessonController {
     }
 
     private void playPitch(double pitchValue) {
-        // Convert pitch (rough MIDI number) to a note string (ex: "C4")
         String noteName = midiToNoteName((int) Math.round(pitchValue));
 
         new Thread(() -> {
