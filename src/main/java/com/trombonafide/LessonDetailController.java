@@ -3,9 +3,20 @@ package com.trombonafide;
 import java.io.IOException;
 import java.util.Collections;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
 import com.model.Lesson;
 import com.model.User;
 
@@ -26,6 +37,10 @@ public class LessonDetailController {
     // TextArea displaying the content of the lesson
     @FXML
     private TextArea lessonContentArea;
+        
+    @FXML 
+    private AnchorPane anchorPane;
+
 
     // The lesson currently being viewed
     private Lesson currentLesson;
@@ -77,5 +92,27 @@ public class LessonDetailController {
     @FXML
     private void handleBackToLessons() throws IOException {
         App.setRoot("lessons");
+    }
+    @FXML
+    public void initialize() {
+        Image backgroundImage = new Image(getClass().getResource("/images/desc.jpg").toExternalForm());
+
+        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
+        BackgroundImage background = new BackgroundImage(backgroundImage, 
+                                            BackgroundRepeat.NO_REPEAT, 
+                                            BackgroundRepeat.NO_REPEAT, 
+                                            BackgroundPosition.CENTER, 
+                                            backgroundSize);
+        anchorPane.setBackground(new Background(background));
+
+        Rectangle overlay = new Rectangle();
+        overlay.setFill(new Color(0, 0, 0, 0.65));
+        overlay.widthProperty().bind(anchorPane.widthProperty());
+        overlay.heightProperty().bind(anchorPane.heightProperty());
+        anchorPane.getChildren().add(0, overlay);
+
+        Platform.runLater(() -> {
+            anchorPane.getScene().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        });
     }
 }

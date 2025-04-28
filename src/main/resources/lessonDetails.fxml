@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.*?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.trombonafide.LessonDetailController"
-      alignment="CENTER" spacing="20" style="-fx-padding: 30;">
-    
-    <Label fx:id="lessonTitleLabel" style="-fx-font-size: 18;" wrapText="true"/>
-    <TextArea fx:id="lessonContentArea" editable="false" wrapText="true" prefHeight="200" prefWidth="300"/>
-    
-    <Button text="Start Lesson" onAction="#handleStartLesson"/>
-    <Button text="Back to Lessons" onAction="#handleBackToLessons"/>
-</VBox>
+<AnchorPane fx:id="anchorPane" prefHeight="490.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trombonafide.LessonDetailController">
+   <children>
+      <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefWidth="817.0" spacing="30" style="-fx-padding: 30;">
+          <Label fx:id="lessonTitleLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: yellow;" text="Buzzing Basics" wrapText="true" />
+          <TextArea fx:id="lessonContentArea" editable="false" prefHeight="200.0" prefWidth="500.0" style="-fx-control-inner-background: black; -fx-text-fill: yellow; -fx-font-size: 24px; -fx-alignment: center;" wrapText="true">
+          </TextArea>
+          <Button onAction="#handleStartLesson" style="-fx-font-weight: bold; -fx-background-color: yellow;" text="Start Lesson">
+            <VBox.margin>
+               <Insets top="40.0" />
+            </VBox.margin></Button>
+          <Button onAction="#handleBackToLessons" style="-fx-font-weight: bold; -fx-background-color: yellow;" text="Back to Lessons" />
+      </VBox>
+   </children>
+</AnchorPane>
