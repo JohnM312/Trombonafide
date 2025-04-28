@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.model.User;
 import com.model.UserList;
 import com.model.Song;
+import com.model.SongList;
 import com.model.Lesson;
 import com.model.LessonList;
 
@@ -107,4 +108,14 @@ public class DataLoader {
         LessonList.getInstance().getLessons().addAll(lessons);
         System.out.println("Loaded lessons: " + lessons.size());
     }
+
+        /**
+     * Loads songs from JSON and populates the shared SongList instance.
+     */
+    public static void populateSongList() {
+        List<Song> songs = loadSongs();
+        SongList.getInstance().getSongs().addAll(songs);
+        System.out.println("Loaded songs: " + songs.size());
+    }
+
 }
