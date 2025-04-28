@@ -49,21 +49,27 @@ public class ProfileViewController {
             lessonsLabel.setText("Lessons Completed: " + currentUser.getProgress().getCompletedLessons().size());
         }
 
+        // Set background image
         Image backgroundImage = new Image(getClass().getResource("/images/profileicon.jpg").toExternalForm());
-
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
-        BackgroundImage background = new BackgroundImage(backgroundImage, 
-                                            BackgroundRepeat.NO_REPEAT, 
-                                            BackgroundRepeat.NO_REPEAT, 
-                                            BackgroundPosition.CENTER, 
-                                            backgroundSize);
+        BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         anchorPane.setBackground(new Background(background));
 
+        // Dim background with overlay
         Rectangle overlay = new Rectangle();
         overlay.setFill(new Color(0, 0, 0, 0.4));
         overlay.widthProperty().bind(anchorPane.widthProperty());
         overlay.heightProperty().bind(anchorPane.heightProperty());
         anchorPane.getChildren().add(0, overlay);
+
+        // Set the profile picture
+        Image profilePic = new Image(getClass().getResource("/images/Default_pfp.jpg").toExternalForm());
+        profileImageView.setImage(profilePic);
+
+        // Clip the profile picture to a circle
+        double radius = Math.min(profileImageView.getFitWidth(), profileImageView.getFitHeight()) / 2;
+        Circle clip = new Circle(radius, radius, radius);
+        profileImageView.setClip(clip);
 
         Platform.runLater(() -> {
             anchorPane.getScene().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
