@@ -24,14 +24,15 @@
             </VBox.margin>
          </Text>
           
-                             <Label prefHeight="134.0" prefWidth="698.0" style="-fx-text-fill: yellow; -fx-font-size: 25;" text="Your go-to place to learn, play, and master music! Whether you're just starting out or sharpening your skills, we're here to help make your musical journey fun and easy. Let's get playing" textAlignment="CENTER" wrapText="true">
-                  <font>
-                     <Font size="25.0" />
-                  </font>
+         <Label prefHeight="134.0" prefWidth="698.0" style="-fx-text-fill: yellow; -fx-font-size: 25;" text="Your go-to place to learn, play, and master music! Whether you're just starting out or sharpening your skills, we're here to help make your musical journey fun and easy. Let's get playing" textAlignment="CENTER" wrapText="true">
+            <font>
+               <Font size="25.0" />
+            </font>
             <padding>
                <Insets bottom="15.0" />
             </padding>
-              </Label>
+         </Label>
+         
          <Text fill="YELLOW" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Choose an option below to get started!">
             <font>
                <Font size="27.0" />
@@ -42,25 +43,27 @@
          </Text>
          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
             <children>
-                     <Button maxHeight="-Infinity" maxWidth="-Infinity" onAction="#goToProfiles" prefHeight="75.0" prefWidth="150.0" styleClass="button" text="Profiles">
+               <Button maxHeight="-Infinity" maxWidth="-Infinity" onAction="#goToProfiles" prefHeight="75.0" prefWidth="150.0" styleClass="button" text="Profiles">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Button>
-                     <Button maxHeight="-Infinity" maxWidth="-Infinity" onAction="#goToLibrary" prefHeight="75.0" prefWidth="150.0" styleClass="button" text="Library">
+               <Button maxHeight="-Infinity" maxWidth="-Infinity" onAction="#goToLibrary" prefHeight="75.0" prefWidth="150.0" styleClass="button" text="Library">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Button>
-                     <Button maxHeight="-Infinity" maxWidth="-Infinity" onAction="#goToLessons" prefHeight="75.0" prefWidth="150.0" styleClass="button" text="Lessons">
+               <Button maxHeight="-Infinity" maxWidth="-Infinity" onAction="#goToLessons" prefHeight="75.0" prefWidth="150.0" styleClass="button" text="Lessons">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Button>
             </children>
          </HBox>
-          </VBox>
+      </VBox>
       <Button onAction="#goToPrimary" prefHeight="18.0" prefWidth="115.0" style="-fx-background-color: transparent; -fx-text-fill: yellow; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 15px;" styleClass="button" text="←sign out">
+      </Button>
+      <Button onAction="#goToProfileView" prefHeight="18.0" prefWidth="115.0" style="-fx-background-color: transparent; -fx-text-fill: yellow; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 15px;" styleClass="button" layoutX="650.0" layoutY="10.0" text="My Profile →">
       </Button>
    </children>
 </AnchorPane>
