@@ -1,7 +1,6 @@
 package com.trombonafide;
-    
-import java.io.IOException;
 
+import java.io.IOException;
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -17,29 +16,33 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-    
 public class HomeController {
-
     @FXML
     private AnchorPane anchorPane;
     
     @FXML
     private void goToLibrary(ActionEvent event) throws IOException {
-        App.setRoot("library"); // Navigate to library.fxml
+        App.setRoot("library");
     }
     
     @FXML
-     private void goToLessons(ActionEvent event) throws IOException {
-        App.setRoot("lessons"); // Navigate to lessons.fxml
+    private void goToLessons(ActionEvent event) throws IOException {
+        App.setRoot("lessons");
     }
     
     @FXML
     private void goToProfiles(ActionEvent event) throws IOException {
-        App.setRoot("profiles"); // Navigate to profiles.fxml
+        App.setRoot("profiles");
     }
+
     @FXML
     private void goToPrimary(ActionEvent event) throws IOException {
         App.setRoot("primary");
+    }
+
+    @FXML
+    private void goToProfileView(ActionEvent event) throws IOException {
+        App.setRoot("profileView");
     }
 
     @FXML
@@ -47,9 +50,9 @@ public class HomeController {
         Image backgroundImage = new Image(getClass().getResource("/images/home.png").toExternalForm());
 
         BackgroundSize backgroundSize = new BackgroundSize(
-            1.0, 1.0,  // 100% width, 100% height
-            true, true, 
-            false, false // no preserve ratio, no contain
+            1.0, 1.0,
+            true, true,
+            false, false
         );
 
         BackgroundImage background = new BackgroundImage(
@@ -62,20 +65,19 @@ public class HomeController {
 
         anchorPane.setBackground(new Background(background));
 
-        FadeTransition fadeIn = new FadeTransition(Duration.millis(1000), anchorPane); // 1 second fade
-        fadeIn.setFromValue(0.0); 
-        fadeIn.setToValue(1.0);   
-        fadeIn.play();   
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(1000), anchorPane);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+        fadeIn.play();
         
         Rectangle overlay = new Rectangle();
         overlay.setFill(new Color(0, 0, 0, 0.65));
         overlay.widthProperty().bind(anchorPane.widthProperty());
         overlay.heightProperty().bind(anchorPane.heightProperty());
-        anchorPane.getChildren().add(0, overlay); 
+        anchorPane.getChildren().add(0, overlay);
         
         Platform.runLater(() -> {
             anchorPane.getScene().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         });
-
     }
 }
