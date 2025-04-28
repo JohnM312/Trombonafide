@@ -97,4 +97,15 @@
     "completedLessons" : [ ],
     "totalPoints" : 0
   }
+}, {
+  "uuid" : "f1a2b3c4-d5e6-7890-1abc-def012345678",
+  "firstName" : "Alice",
+  "lastName" : "Smith",
+  "username" : "asmith",
+  "password" : "1",
+  "email" : "alice.smith@example.com",
+  "progress" : {
+    "completedLessons" : [ "a1b2c3d4-e5f6-7890-1234-567890abcdef", "bcdef012-3456-789a-bcde-f0123456789a", "67817664-7908-4fed-8b55-d09eb78ae18a" ],
+    "totalPoints" : 110
+  }
 } ]
