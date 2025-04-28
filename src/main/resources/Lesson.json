@@ -1,11 +1,11 @@
 [ {
   "uuid" : "67817664-7908-4fed-8b55-d09eb78ae18a",
-  "title" : "Dup",
-  "content" : "Same",
-  "hint" : "Hint"
+  "title" : "Slide",
+  "content" : "In this lesson you will learn about slide positions.",
+  "hint" : "Don't worry about playing just yet. Focus on the slide."
 }, {
   "uuid" : "67817664-7908-4fed-8b55-d09eb78ae18a",
-  "title" : "Dup",
-  "content" : "Same",
-  "hint" : "Hint"
+  "title" : "Playing Notes",
+  "content" : "In this lesson you will learn how to play notes on the trombone.",
+  "hint" : "Adjust your embouchure to play higher or lower notes."
 } ]
