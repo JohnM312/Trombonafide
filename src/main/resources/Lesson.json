@@ -8,4 +8,25 @@
   "title" : "Playing Notes",
   "content" : "In this lesson you will learn how to play notes on the trombone.",
   "hint" : "Adjust your embouchure to play higher or lower notes."
-} ]
+}, {
+    "uuid": "f4f5465c-0f60-4f4d-9fa9-8e7c292f2b9f",
+    "title": "Buzzing Basics",
+    "content": "In this lesson you will learn how to buzz your lips properly.",
+    "hint": "Practice buzzing without the trombone first to get a steady sound."
+}, {
+    "uuid": "3c0d0c38-9984-4b7e-8ff7-90bd8e49ed34",
+    "title": "First Notes",
+    "content": "In this lesson you will combine buzzing and sliding to play your first notes.",
+    "hint": "Keep your air steady and your embouchure firm but relaxed."
+}, {
+    "uuid": "1d9d0af2-6a84-46d4-8f4b-79c7be91f8c9",
+    "title": "Holding the Trombone",
+    "content": "In this lesson you will learn the correct way to hold the trombone.",
+    "hint": "Good posture helps you play with less effort."
+}, {
+    "uuid": "a1fd91cc-15f4-4be5-b70d-2a0410d5f832",
+    "title": "Breathing Techniques",
+    "content": "In this lesson you will learn how to breathe properly while playing.",
+    "hint": "Take full, deep breaths to support your sound."
+  }
+]
